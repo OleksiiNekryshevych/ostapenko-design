@@ -11,11 +11,8 @@ export function Contact() {
         e.preventDefault();
         setStatus('submitting');
 
-        // Simulate network request or use Formspree
-        // fetch('https://formspree.io/f/YOUR_FORM_ID', { ... })
-
+        // Mock submission
         setTimeout(() => {
-            // Mock success for now
             setStatus('success');
             (e.target as HTMLFormElement).reset();
         }, 1000);
@@ -23,35 +20,66 @@ export function Contact() {
 
     return (
         <section id="contact" className={`container ${styles.section}`}>
-            <h2 className={styles['section-title']}>Get in touch</h2>
-            <div className={styles['contact-grid']}>
+            <div className={styles['contact-header']}>
+                <h2 className={styles['section-title']}>Let's work together</h2>
+                <p className={styles.subtitle}>Have an idea? Let's discuss it.</p>
+            </div>
+
+            <div className={styles['contact-wrapper']}>
                 <form onSubmit={handleSubmit} className={styles['contact-form']} suppressHydrationWarning>
+                    <div className={styles.row}>
+                        <div className={styles['form-group']}>
+                            <label className={styles.label} htmlFor="firstName">First Name*</label>
+                            <input
+                                id="firstName"
+                                type="text"
+                                name="firstName"
+                                required
+                                className={styles.input}
+                                suppressHydrationWarning
+                            />
+                        </div>
+                        <div className={styles['form-group']}>
+                            <label className={styles.label} htmlFor="lastName">Last Name*</label>
+                            <input
+                                id="lastName"
+                                type="text"
+                                name="lastName"
+                                required
+                                className={styles.input}
+                                suppressHydrationWarning
+                            />
+                        </div>
+                    </div>
+
                     <div className={styles['form-group']}>
-                        <label className="sr-only" htmlFor="email">Email</label>
+                        <label className={styles.label} htmlFor="email">Email*</label>
                         <input
                             id="email"
                             type="email"
                             name="email"
-                            placeholder="Your email"
                             required
                             className={styles.input}
                             suppressHydrationWarning
                         />
                     </div>
+
                     <div className={styles['form-group']}>
-                        <label className="sr-only" htmlFor="message">Message</label>
+                        <label className={styles.label} htmlFor="description">Brief Project Description*</label>
                         <textarea
-                            id="message"
-                            name="message"
-                            placeholder="Your message"
+                            id="description"
+                            name="description"
                             required
                             className={styles.textarea}
                             suppressHydrationWarning
                         ></textarea>
                     </div>
-                    <Button type="submit" disabled={status === 'submitting'}>
-                        {status === 'submitting' ? 'Sending...' : 'Send message'}
-                    </Button>
+
+                    <div className={styles['form-actions']}>
+                        <Button type="submit" disabled={status === 'submitting'} variant="primary">
+                            {status === 'submitting' ? 'Sending...' : 'Contact'}
+                        </Button>
+                    </div>
 
                     {status === 'success' && (
                         <p className={`${styles['form-message']} ${styles.success}`}>
@@ -64,13 +92,6 @@ export function Contact() {
                         </p>
                     )}
                 </form>
-
-                <div className={styles['contact-info']}>
-                    <p className={styles.muted}>
-                        Prefer email? <br />
-                        <a href="mailto:hello@example.com">hello@example.com</a>
-                    </p>
-                </div>
             </div>
         </section>
     );

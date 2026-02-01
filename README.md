@@ -1,6 +1,6 @@
 # Ostapenko Design Monorepo
 
-This project is a monorepo managed with [Nx](https://nx.dev). It contains the personal portfolio website for Oleksii Ostapenko.
+This project is a monorepo managed with [Nx](https://nx.dev). It contains the personal portfolio website for Alina Ostapenko.
 
 ## Project Structure
 

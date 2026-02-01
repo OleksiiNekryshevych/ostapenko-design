@@ -1,61 +1,85 @@
 .section {
-    padding: 48px 0;
+    padding: 64px 0 120px 0;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 48px;
 }
 
 .section-title {
     font-family: var(--font-heading);
-    font-size: 28px;
-    margin-bottom: 18px;
+    font-size: 24px;
+    margin-bottom: 8px;
+    font-weight: 600;
 }
 
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 28px;
-    align-items: start;
+.subtitle {
+    color: var(--muted-text);
+    font-size: 16px;
+}
+
+.contact-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.row {
+    display: flex;
+    gap: 20px;
+
+    .form-group {
+        flex: 1;
+    }
 }
 
 .form-group {
-    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text, #000);
 }
 
 .input,
 .textarea {
     width: 100%;
-    padding: 12px 14px;
-    border-radius: 8px;
-    border: 1px solid #e6e9ef;
+    padding: 16px;
+    border-radius: 4px;
+    border: none;
+    background-color: #f3f4f6; // Light gray background
     font-size: 15px;
+    font-family: inherit;
 
     &:focus {
         outline: none;
-        border-color: var(--primary-1);
-        box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
+        box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
     }
 }
 
 .textarea {
-    min-height: 160px;
+    min-height: 120px;
     resize: vertical;
 }
 
-.muted {
-    color: var(--muted-text);
-
-    a {
-        color: var(--primary-1);
-        text-decoration: none;
-        font-weight: 500;
-
-        &:hover {
-            text-decoration: underline;
-        }
-    }
+.form-actions {
+    margin-top: 12px;
 }
 
 .form-message {
     margin-top: 12px;
     font-weight: 500;
+    text-align: center;
 
     &.success {
         color: green;
@@ -67,7 +91,8 @@
 }
 
 @media (max-width: 768px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
+    .row {
+        flex-direction: column;
+        gap: 20px;
     }
 }

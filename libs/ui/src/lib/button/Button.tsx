@@ -4,9 +4,10 @@ import clsx from 'clsx';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode;
-    variant?: 'primary' | 'ghost';
+    variant?: 'primary' | 'ghost' | 'outline';
     href?: string;
     className?: string; // Allow custom classes
+    download?: boolean | string; // Add download prop
 }
 
 export function Button({

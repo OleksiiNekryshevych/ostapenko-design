@@ -1,11 +1,48 @@
 import styles from './Footer.module.scss';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export function Footer() {
     const year = new Date().getFullYear();
+
+    const socialLinks = [
+        { label: 'LinkedIn', href: 'https://linkedin.com', icon: '/linkedin.svg' },
+        { label: 'WhatsApp', href: 'https://whatsapp.com', icon: '/whatsapp.svg' },
+        { label: 'Telegram', href: 'https://t.me', icon: '/telegram.svg' },
+    ];
+
     return (
         <footer className={styles['site-footer']}>
-            <div className="container footer-inner">
-                <p>&copy; {year} Oleksii Ostapenko</p>
+            <div className={`container ${styles['footer-inner']}`}>
+                <div className={styles['footer-left']}>
+                    <Link href="/" className={styles.logo}>AO</Link>
+                    <p className={styles.copyright}>
+                        © {year} Alina Ostapenko. All rights reserved.
+                    </p>
+                </div>
+
+                <div className={styles['footer-right']}>
+                    <p className={styles.branding}>Alina Ostapenko Design</p>
+                    <div className={styles['social-links']}>
+                        {socialLinks.map((item) => (
+                            <a
+                                key={item.label}
+                                href={item.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={item.label}
+                                className={styles['social-link']}
+                            >
+                                <Image
+                                    src={item.icon}
+                                    alt={item.label}
+                                    width={20}
+                                    height={20}
+                                />
+                            </a>
+                        ))}
+                    </div>
+                </div>
             </div>
         </footer>
     );

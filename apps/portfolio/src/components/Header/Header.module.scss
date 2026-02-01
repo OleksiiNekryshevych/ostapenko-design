@@ -1,41 +1,65 @@
 .site-header {
-    background: linear-gradient(135deg, var(--primary-1) 0%, var(--primary-2) 100%);
-    color: white;
+    padding: 2rem 0;
+    // background: transparent; // Or white, depending on design
+    color: var(--text, #000);
 }
 
 .header-inner {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 28px 0;
+    align-items: center;
 }
 
 .logo {
-    color: white;
-    font-family: var(--font-heading);
-    font-weight: 600;
-    font-size: 20px;
-    text-decoration: none;
-}
-
-.main-nav ul {
-    list-style: none;
     display: flex;
-    gap: 28px;
+    align-items: center;
 }
 
-.main-nav a {
-    color: rgba(255, 255, 255, 0.95);
-    text-decoration: none;
-    font-weight: 500;
+.logo-image {
+    width: auto;
+    height: 48px; // Adjust height to match design
+    object-fit: contain;
+}
+
+.social-nav {
+    ul {
+        display: flex;
+        gap: 1rem;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // width: 48px;
+        // height: 48px;
+        // border-radius: 50%;
+        color: var(--text, #000);
+        border: none;
+        background: transparent;
+        transition: transform 0.2s;
+        padding: 0;
+        margin: 0;
+
+        &:hover {
+            transform: translateY(-2px);
+            background: transparent;
+            border: none;
+        }
+
+        img {
+            display: block; // Remove extra space
+            // width: 24px; // Controlled by Next Image props but good to enforce if needed
+            // height: auto;
+        }
+    }
 }
 
 @media (max-width: 768px) {
     .header-inner {
-        padding: 18px 0;
-    }
-
-    .main-nav ul {
-        gap: 14px;
+        padding: 1rem 0;
     }
 }

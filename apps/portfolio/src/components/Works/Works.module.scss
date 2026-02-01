@@ -1,34 +1,75 @@
 .section {
-    padding: 48px 0;
+    padding: 0 0 64px 0;
 }
 
 .section-title {
     font-family: var(--font-heading);
-    font-size: 28px;
-    margin-bottom: 18px;
+    font-size: 24px;
+    margin-bottom: 32px;
+    font-weight: 600;
 }
 
 .works-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.project-card {
+    padding: 0 !important; // Override Card default padding
+    overflow: hidden;
+    border: none;
+    box-shadow: none; // Minimal style? Or keep shadow? Using none for clean look often on portfolio
+    background: transparent;
+}
+
+.card-image {
+    aspect-ratio: 4 / 3;
+    width: 100%;
+    margin-bottom: 16px;
+    border-radius: 12px; // Rounded corners for image
+    overflow: hidden;
+    position: relative;
+
+    .image-placeholder {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.card-content {
+    padding: 0 4px; // Slight padding
 }
 
 .card-title {
     font-family: var(--font-heading);
-    font-size: 18px;
-    margin-bottom: 8px;
+    font-size: 20px;
+    margin-bottom: 12px;
+    font-weight: 600;
 }
 
-.card-desc {
-    color: var(--muted-text);
-    font-size: 14px;
+.tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
-@media (max-width: 1024px) {
-    .works-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.tag {
+    font-size: 13px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    background-color: #f3f4f6;
+    color: var(--muted-text, #666);
+    font-weight: 500;
 }
 
 @media (max-width: 768px) {
