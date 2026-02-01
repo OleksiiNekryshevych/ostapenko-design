@@ -1,0 +1,26 @@
+@use 'sass:map';
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  // We'll need to ensure the font variable is available or import it.
+  // Ideally variables are in a shared abstract.
+  font-family: var(--font-heading, "Poppins", sans-serif);
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  
+  &.primary {
+    background: linear-gradient(135deg, var(--primary-1, #667eea), var(--primary-2, #764ba2));
+    color: white;
+  }
+
+  &.ghost {
+    background: transparent;
+    color: var(--text, #0f1724);
+    border: 1px solid rgba(11, 18, 32, 0.06);
+  }
+}

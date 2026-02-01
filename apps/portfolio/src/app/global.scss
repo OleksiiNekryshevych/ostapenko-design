@@ -1,0 +1,44 @@
+/* Variables */
+:root {
+    --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    --font-heading: "Poppins", --font-sans;
+    --bg: #0f1724;
+    --surface: #0b1220;
+    --muted-bg: #f8f9fa;
+    --text: #0f1724;
+    --muted-text: #6b7280;
+    --primary-1: #667eea;
+    --primary-2: #764ba2;
+    --accent: #ff7a59;
+    --card: #0b1220;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--text);
+    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Accessibility utility */
+.sr-only {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+}
