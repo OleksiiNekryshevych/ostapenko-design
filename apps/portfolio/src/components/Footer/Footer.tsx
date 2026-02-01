@@ -4,11 +4,12 @@ import Image from 'next/image';
 
 export function Footer() {
     const year = new Date().getFullYear();
+    const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
     const socialLinks = [
-        { label: 'LinkedIn', href: 'https://linkedin.com', icon: '/linkedin.svg' },
-        { label: 'WhatsApp', href: 'https://whatsapp.com', icon: '/whatsapp.svg' },
-        { label: 'Telegram', href: 'https://t.me', icon: '/telegram.svg' },
+        { label: 'LinkedIn', href: 'https://linkedin.com', icon: `${basePath}/linkedin.svg` },
+        { label: 'WhatsApp', href: 'https://whatsapp.com', icon: `${basePath}/whatsapp.svg` },
+        { label: 'Telegram', href: 'https://t.me', icon: `${basePath}/telegram.svg` },
     ];
 
     return (

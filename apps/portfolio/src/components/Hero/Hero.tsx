@@ -25,7 +25,7 @@ export function Hero() {
                         <div className={styles['image-wrapper']}>
                             {/* Placeholder for profile image */}
                             <Image
-                                src="/profile-pic.jpg"
+                                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/profile-pic.jpg`}
                                 alt="Alina Ostapenko"
                                 width={320}
                                 height={320}
