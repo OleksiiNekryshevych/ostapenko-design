@@ -1,0 +1,19 @@
+{
+  "name": "ostapenko-design",
+  "version": "1.0.0",
+  "description": "Personal portfolio monorepo with main website and contact server",
+  "private": true,
+  "scripts": {
+    "nx": "nx",
+    "start:web": "nx serve web",
+    "start:server": "nx serve server",
+    "build:web": "nx build web",
+    "build:server": "nx build server",
+    "build": "nx run-many --target=build",
+    "lint": "nx run-many --target=lint",
+    "test": "nx run-many --target=test"
+  },
+  "devDependencies": {
+    "nx": "^18.0.0"
+  }
+}

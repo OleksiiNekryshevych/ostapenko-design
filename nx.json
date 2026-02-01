@@ -1,0 +1,14 @@
+{
+  "extends": "nx/presets/npm.json",
+  "nxCloudAccessToken": "",
+  "plugins": [],
+  "targetDefaults": {},
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*"],
+    "production": ["default"]
+  },
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "libs"
+  }
+}
