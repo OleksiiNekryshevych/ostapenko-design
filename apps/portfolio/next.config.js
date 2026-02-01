@@ -8,9 +8,16 @@ const { composePlugins, withNx } = require('@nx/next');
  **/
 const nextConfig = {
   output: 'export',
+  // Optional: Change the output directory `out` -> `dist`
+  // distDir: 'dist',
   images: {
     unoptimized: true,
   },
+  // Set basePath for GitHub Pages if deploying to a subdirectory (e.g. /repo-name)
+  // If no base path is needed (e.g. username.github.io), this remains undefined.
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
+  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || '',
+
   // Use this to set Nx-specific options
   // See: https://nx.dev/recipes/next/next-config-setup
   nx: {},

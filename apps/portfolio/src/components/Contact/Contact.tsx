@@ -25,7 +25,7 @@ export function Contact() {
         <section id="contact" className={`container ${styles.section}`}>
             <h2 className={styles['section-title']}>Get in touch</h2>
             <div className={styles['contact-grid']}>
-                <form onSubmit={handleSubmit} className={styles['contact-form']}>
+                <form onSubmit={handleSubmit} className={styles['contact-form']} suppressHydrationWarning>
                     <div className={styles['form-group']}>
                         <label className="sr-only" htmlFor="email">Email</label>
                         <input
@@ -35,6 +35,7 @@ export function Contact() {
                             placeholder="Your email"
                             required
                             className={styles.input}
+                            suppressHydrationWarning
                         />
                     </div>
                     <div className={styles['form-group']}>
@@ -45,6 +46,7 @@ export function Contact() {
                             placeholder="Your message"
                             required
                             className={styles.textarea}
+                            suppressHydrationWarning
                         ></textarea>
                     </div>
                     <Button type="submit" disabled={status === 'submitting'}>
