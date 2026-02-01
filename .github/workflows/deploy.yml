@@ -40,7 +40,7 @@ jobs:
           # If you are deploying to a user site (username.github.io), leave this empty.
           # If you are deploying to a project site (username.github.io/repo-name), set this to /repo-name.
           # You can also set this in GitHub Repository Settings -> Secrets and Variables -> Actions -> Variables
-          NEXT_PUBLIC_BASE_PATH: ${{ vars.NEXT_PUBLIC_BASE_PATH }}
+          NEXT_PUBLIC_BASE_PATH: /ostapenko-design
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
