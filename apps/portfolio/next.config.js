@@ -14,9 +14,10 @@ const nextConfig = {
     unoptimized: true,
   },
   // Set basePath for GitHub Pages if deploying to a subdirectory (e.g. /repo-name)
-  // If no base path is needed (e.g. username.github.io), this remains undefined.
-  basePath: process.env.NODE_ENV === 'production' ? '/ostapenko-design' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/ostapenko-design' : '',
+  // Set basePath for GitHub Pages
+  // Check for GITHUB_ACTIONS or NODE_ENV=production
+  basePath: process.env.GITHUB_ACTIONS || process.env.NODE_ENV === 'production' ? '/ostapenko-design' : '',
+  assetPrefix: process.env.GITHUB_ACTIONS || process.env.NODE_ENV === 'production' ? '/ostapenko-design' : '',
 
   // Use this to set Nx-specific options
   // See: https://nx.dev/recipes/next/next-config-setup
