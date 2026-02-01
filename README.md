@@ -16,7 +16,7 @@ This project is a monorepo managed with [Nx](https://nx.dev). It contains the pe
 
 2.  **Start Development Server**:
     ```bash
-    nx serve portfolio
+    nx dev portfolio
     ```
     Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
