@@ -1,6 +1,5 @@
 import styles from './Hero.module.scss';
 import { Button } from '@ostapenko-design/ui';
-import Image from 'next/image';
 
 export function Hero() {
     return (
@@ -24,12 +23,10 @@ export function Hero() {
                     <div className={styles['hero-visual']}>
                         <div className={styles['image-wrapper']}>
                             {/* Placeholder for profile image */}
-                            <Image
+                            <img
                                 src="/profile-pic.jpg"
                                 alt="Alina Ostapenko"
-                                fill
                                 className={styles['profile-image']}
-                                priority
                             />
                         </div>
                     </div>

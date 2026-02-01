@@ -15,8 +15,8 @@ const nextConfig = {
   },
   // Set basePath for GitHub Pages if deploying to a subdirectory (e.g. /repo-name)
   // If no base path is needed (e.g. username.github.io), this remains undefined.
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
-  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || '',
+  basePath: process.env.NODE_ENV === 'production' ? '/ostapenko-design' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/ostapenko-design' : '',
 
   // Use this to set Nx-specific options
   // See: https://nx.dev/recipes/next/next-config-setup
