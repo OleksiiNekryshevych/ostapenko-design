@@ -10,6 +10,21 @@
     margin-top: var(--space-xl);
 }
 
+.project-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+
+        .card-image {
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+    }
+}
+
 .project-card {
     padding: 0 !important;
     overflow: hidden;
