@@ -14,8 +14,8 @@ export function Hero() {
                         </h1>
 
                         <div className={styles['hero-ctas']}>
-                            <Button href="#works" variant="primary">Work with me</Button>
-                            <Button href="/resume.pdf" variant="outline" download>Download CV</Button>
+                            <Button href="#contact" variant="primary">Work with me</Button>
+                            {/* <Button href="/resume.pdf" variant="outline" download>Download CV</Button> */}
                         </div>
 
                         <p className={styles['hero-name']}>Alina Ostapenko</p>

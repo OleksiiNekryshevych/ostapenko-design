@@ -119,3 +119,8 @@ jobs:
 
 *   **SCSS Modules**: Components use locally scoped SCSS modules (e.g., `Hero.module.scss`).
 *   **Global Styles**: Defined in `apps/portfolio/src/app/global.scss`.
+
+
+## Form integration
+https://formspree.io/f/xovvjydk
+https://formbold.com/account/forms/6QZdl?tab=submissions
