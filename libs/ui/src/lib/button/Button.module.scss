@@ -2,16 +2,16 @@
 
 .btn {
   display: inline-block;
-  padding: 12px 64px;
-  border-radius: 8px;
+  padding: 16px 64px;
   text-decoration: none;
-  font-weight: 600;
-  // We'll need to ensure the font variable is available or import it.
-  // Ideally variables are in a shared abstract.
-  font-family: var(--font-heading, "Poppins", sans-serif);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0;
+  text-align: center;
   cursor: pointer;
   border: none;
-  font-size: 1rem;
 
   &.primary {
     background-color: var(--text, #0f1724);
@@ -29,7 +29,7 @@
 
   &.outline {
     background: transparent;
-    border: 1px solid #E5E7EB; // Light gray border
+    border: 1px solid #E5E7EB;
     color: var(--text, #0f1724);
 
     &:hover {
