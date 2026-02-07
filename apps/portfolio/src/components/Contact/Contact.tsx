@@ -55,68 +55,70 @@ export function Contact() {
     };
 
     return (
-        <section id="contact" className={`container ${styles.section}`}>
-            <div className={styles['contact-header']}>
-                <h2 className={styles['section-title']}>Let's work together</h2>
-                <p className={styles.subtitle}>Have an idea? Let's discuss it.</p>
-            </div>
+        <section id="contact" className={styles.section}>
+            <div className="container">
+                <div className={styles['contact-header']}>
+                    <h2 className="section-title">Let's work together</h2>
+                    <p className="subtitle-text">Have an idea? Let's discuss it.</p>
+                </div>
 
-            <div className={styles['contact-wrapper']}>
-                <form
-                    ref={formRef}
-                    onSubmit={handleSubmit}
-                    className={styles['contact-form']}
-                >
-                    <div className={styles.row}>
+                <div className={styles['contact-wrapper']}>
+                    <form
+                        ref={formRef}
+                        onSubmit={handleSubmit}
+                        className={styles['contact-form']}
+                    >
+                        <div className={styles.row}>
+                            <div className={styles['form-group']}>
+                                <label className={styles.label} htmlFor="firstName">First Name*</label>
+                                <input
+                                    id="firstName"
+                                    type="text"
+                                    name="firstName"
+                                    required
+                                    className={styles.input}
+                                />
+                            </div>
+                            <div className={styles['form-group']}>
+                                <label className={styles.label} htmlFor="lastName">Last Name*</label>
+                                <input
+                                    id="lastName"
+                                    type="text"
+                                    name="lastName"
+                                    required
+                                    className={styles.input}
+                                />
+                            </div>
+                        </div>
+
                         <div className={styles['form-group']}>
-                            <label className={styles.label} htmlFor="firstName">First Name*</label>
+                            <label className={styles.label} htmlFor="email">Email*</label>
                             <input
-                                id="firstName"
-                                type="text"
-                                name="firstName"
+                                id="email"
+                                type="email"
+                                name="email"
                                 required
                                 className={styles.input}
                             />
                         </div>
+
                         <div className={styles['form-group']}>
-                            <label className={styles.label} htmlFor="lastName">Last Name*</label>
-                            <input
-                                id="lastName"
-                                type="text"
-                                name="lastName"
+                            <label className={styles.label} htmlFor="message">Brief Project Description*</label>
+                            <textarea
+                                id="message"
+                                name="message"
                                 required
-                                className={styles.input}
-                            />
+                                className={styles.textarea}
+                            ></textarea>
                         </div>
-                    </div>
 
-                    <div className={styles['form-group']}>
-                        <label className={styles.label} htmlFor="email">Email*</label>
-                        <input
-                            id="email"
-                            type="email"
-                            name="email"
-                            required
-                            className={styles.input}
-                        />
-                    </div>
-
-                    <div className={styles['form-group']}>
-                        <label className={styles.label} htmlFor="message">Brief Project Description*</label>
-                        <textarea
-                            id="message"
-                            name="message"
-                            required
-                            className={styles.textarea}
-                        ></textarea>
-                    </div>
-
-                    <div className={styles['form-actions']}>
-                        <Button type="submit" variant="primary" disabled={status === 'submitting'}>
-                            {status === 'submitting' ? 'Sending...' : 'Contact'}
-                        </Button>
-                    </div>
-                </form>
+                        <div className={styles['form-actions']}>
+                            <Button type="submit" variant="primary" disabled={status === 'submitting'}>
+                                {status === 'submitting' ? 'Sending...' : 'Contact'}
+                            </Button>
+                        </div>
+                    </form>
+                </div>
             </div>
 
             {/* Snackbar notification */}

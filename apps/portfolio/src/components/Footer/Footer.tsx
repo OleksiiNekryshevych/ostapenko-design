@@ -14,34 +14,36 @@ export function Footer() {
 
     return (
         <footer className={styles['site-footer']}>
-            <div className={`container ${styles['footer-inner']}`}>
-                <div className={styles['footer-left']}>
-                    <Link href="/" className={styles.logo}>AO</Link>
-                    <p className={styles.copyright}>
-                        © {year} Alina Ostapenko. All rights reserved.
-                    </p>
-                </div>
+            <div className="container">
+                <div className={styles['footer-inner']}>
+                    <div className={styles['footer-left']}>
+                        <Link href="/" className={styles.logo}>AO</Link>
+                        <p className={styles.copyright}>
+                            © {year} Alina Ostapenko. All rights reserved.
+                        </p>
+                    </div>
 
-                <div className={styles['footer-right']}>
-                    <p className={styles.branding}>Alina Ostapenko Design</p>
-                    <div className={styles['social-links']}>
-                        {socialLinks.map((item) => (
-                            <a
-                                key={item.label}
-                                href={item.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label={item.label}
-                                className={styles['social-link']}
-                            >
-                                <Image
-                                    src={item.icon}
-                                    alt={item.label}
-                                    width={20}
-                                    height={20}
-                                />
-                            </a>
-                        ))}
+                    <div className={styles['footer-right']}>
+                        <p className={styles.branding}>Alina Ostapenko Design</p>
+                        <div className={styles['social-links']}>
+                            {socialLinks.map((item) => (
+                                <a
+                                    key={item.label}
+                                    href={item.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={item.label}
+                                    className={styles['social-link']}
+                                >
+                                    <Image
+                                        src={item.icon}
+                                        alt={item.label}
+                                        width={20}
+                                        height={20}
+                                    />
+                                </a>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

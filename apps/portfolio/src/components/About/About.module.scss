@@ -1,17 +1,8 @@
 .section {
-    padding: 0 0 64px 0;
+    padding-top: 0;
+    padding-bottom: var(--space-3xl);
 }
 
-.lead {
-    font-size: 24px;
-    line-height: 1.4;
-    color: var(--text, #0b1220);
-    margin-bottom: 24px;
-    font-weight: 400;
-}
-
-@media (max-width: 768px) {
-    .lead {
-        font-size: 20px;
-    }
+.lead-text+.lead-text {
+    margin-top: var(--space-lg);
 }

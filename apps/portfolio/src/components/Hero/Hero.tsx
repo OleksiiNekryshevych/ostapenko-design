@@ -4,11 +4,11 @@ import Image from 'next/image';
 
 export function Hero() {
     return (
-        <section className={styles.hero}>
-            <div className={`container`}>
+        <section className="section--hero">
+            <div className="container">
                 <div className={styles['hero-main']}>
                     <div className={styles['hero-content']}>
-                        <h1 className={styles['display-title']}>
+                        <h1 className="display-title">
                             UX/UI <br />
                             Product Designer
                         </h1>
