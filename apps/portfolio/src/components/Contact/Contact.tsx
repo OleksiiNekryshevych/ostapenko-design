@@ -1,23 +1,7 @@
-'use client';
-
-import { useState, FormEvent } from 'react';
 import styles from './Contact.module.scss';
 import { Button } from '@ostapenko-design/ui';
 
 export function Contact() {
-    const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
-
-    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        setStatus('submitting');
-
-        // Mock submission
-        setTimeout(() => {
-            setStatus('success');
-            (e.target as HTMLFormElement).reset();
-        }, 1000);
-    };
-
     return (
         <section id="contact" className={`container ${styles.section}`}>
             <div className={styles['contact-header']}>
@@ -26,7 +10,11 @@ export function Contact() {
             </div>
 
             <div className={styles['contact-wrapper']}>
-                <form onSubmit={handleSubmit} className={styles['contact-form']} suppressHydrationWarning>
+                <form
+                    action="https://formbold.com/s/6QZdl"
+                    method="POST"
+                    className={styles['contact-form']}
+                >
                     <div className={styles.row}>
                         <div className={styles['form-group']}>
                             <label className={styles.label} htmlFor="firstName">First Name*</label>
@@ -36,7 +24,6 @@ export function Contact() {
                                 name="firstName"
                                 required
                                 className={styles.input}
-                                suppressHydrationWarning
                             />
                         </div>
                         <div className={styles['form-group']}>
@@ -47,7 +34,6 @@ export function Contact() {
                                 name="lastName"
                                 required
                                 className={styles.input}
-                                suppressHydrationWarning
                             />
                         </div>
                     </div>
@@ -60,37 +46,24 @@ export function Contact() {
                             name="email"
                             required
                             className={styles.input}
-                            suppressHydrationWarning
                         />
                     </div>
 
                     <div className={styles['form-group']}>
-                        <label className={styles.label} htmlFor="description">Brief Project Description*</label>
+                        <label className={styles.label} htmlFor="message">Brief Project Description*</label>
                         <textarea
-                            id="description"
-                            name="description"
+                            id="message"
+                            name="message"
                             required
                             className={styles.textarea}
-                            suppressHydrationWarning
                         ></textarea>
                     </div>
 
                     <div className={styles['form-actions']}>
-                        <Button type="submit" disabled={status === 'submitting'} variant="primary">
-                            {status === 'submitting' ? 'Sending...' : 'Contact'}
+                        <Button type="submit" variant="primary">
+                            Contact
                         </Button>
                     </div>
-
-                    {status === 'success' && (
-                        <p className={`${styles['form-message']} ${styles.success}`}>
-                            Message sent successfully!
-                        </p>
-                    )}
-                    {status === 'error' && (
-                        <p className={`${styles['form-message']} ${styles.error}`}>
-                            Failed to send message. Please try again.
-                        </p>
-                    )}
                 </form>
             </div>
         </section>

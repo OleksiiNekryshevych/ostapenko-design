@@ -6,7 +6,6 @@ import { Contact } from '../components/Contact/Contact';
 export default function Index() {
   return (
     <main>
-      {/* Note: Header/Footer should ideally be in Layout, but keeping simple for now or adding here */}
       <Hero />
       <About />
       <Works />
