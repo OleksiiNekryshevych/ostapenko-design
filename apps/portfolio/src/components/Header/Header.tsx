@@ -1,15 +1,10 @@
 import styles from './Header.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
+import { SocialLinks } from '../SocialLinks';
 
 export function Header() {
     const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-
-    const socialLinks = [
-        { label: 'LinkedIn', href: 'https://linkedin.com', icon: `${basePath}/linkedin.svg` },
-        { label: 'WhatsApp', href: 'https://whatsapp.com', icon: `${basePath}/whatsapp.svg` },
-        { label: 'Telegram', href: 'https://t.me', icon: `${basePath}/telegram.svg` },
-    ];
 
     return (
         <header className={styles['site-header']}>
@@ -27,20 +22,7 @@ export function Header() {
                         </Link>
                     </div>
                     <nav className={styles['social-nav']}>
-                        <ul>
-                            {socialLinks.map((item) => (
-                                <li key={item.label}>
-                                    <a href={item.href} target="_blank" rel="noopener noreferrer" aria-label={item.label}>
-                                        <Image
-                                            src={item.icon}
-                                            alt={item.label}
-                                            width={40}
-                                            height={40}
-                                        />
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
+                        <SocialLinks />
                     </nav>
                 </div>
             </div>

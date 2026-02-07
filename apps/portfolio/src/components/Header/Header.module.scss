@@ -21,33 +21,8 @@
 }
 
 .social-nav {
-    ul {
-        display: flex;
-        gap: var(--space-md);
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--text);
-        border: none;
-        background: transparent;
-        transition: transform var(--transition-base);
-        padding: 0;
-        margin: 0;
-
-        &:hover {
-            transform: translateY(-2px);
-        }
-
-        img {
-            display: block;
-        }
-    }
+    display: flex;
+    align-items: center;
 }
 
 @media (max-width: 768px) {

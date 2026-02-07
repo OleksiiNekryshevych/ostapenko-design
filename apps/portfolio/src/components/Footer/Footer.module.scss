@@ -2,83 +2,86 @@
     padding: var(--space-xl) 0 var(--space-3xl);
     background: transparent;
     width: 100%;
+    border-top: 1px solid var(--border);
 }
 
-.footer-inner {
+// Top row: Logo and Branding
+.footer-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid var(--border);
-    padding-top: var(--space-xl);
-}
-
-.footer-left {
-    display: flex;
-    align-items: center;
-    gap: var(--space-xl);
+    padding-bottom: var(--space-xl);
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text);
-    text-decoration: none;
-    letter-spacing: -0.02em;
-}
-
-.copyright {
-    color: var(--muted-text);
-    font-size: var(--text-sm);
-}
-
-.footer-right {
     display: flex;
     align-items: center;
-    gap: var(--space-xl);
+
+    img {
+        height: 40px;
+        width: auto;
+    }
 }
 
 .branding {
-    font-size: var(--text-sm);
+    font-size: var(--text-2xl);
     color: var(--text);
     font-weight: 500;
+    letter-spacing: -0.02em;
 }
 
-.social-links {
+// Bottom row: Copyright, Contact, Social
+.footer-bottom {
     display: flex;
-    gap: var(--space-md);
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: var(--space-xl);
 }
 
-.social-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.copyright {
     color: var(--text);
-    width: 36px;
-    height: 36px;
-    border-radius: var(--radius-full);
-    background-color: var(--input-bg);
-    transition: background-color var(--transition-base);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.contact-label {
+    color: var(--text);
+    font-size: var(--text-sm);
+}
+
+.contact-email {
+    color: var(--text);
+    font-size: var(--text-sm);
+    text-decoration: none;
+    transition: opacity var(--transition-base);
 
     &:hover {
-        background-color: var(--border);
+        opacity: 0.7;
     }
 }
 
 @media (max-width: 768px) {
-    .footer-inner {
+    .footer-top {
         flex-direction: column;
         gap: var(--space-lg);
         align-items: center;
         text-align: center;
     }
 
-    .footer-left {
+    .footer-bottom {
         flex-direction: column;
-        gap: var(--space-md);
+        gap: var(--space-xl);
+        align-items: center;
+        text-align: center;
     }
 
-    .footer-right {
-        flex-direction: column;
-        gap: var(--space-md);
+    .contact-info {
+        align-items: center;
     }
 }
