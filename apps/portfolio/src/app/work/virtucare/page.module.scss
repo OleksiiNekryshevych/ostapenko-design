@@ -143,6 +143,17 @@
     }
 }
 
+.section-subtitle {
+    font-family: var(--font-sans);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.6;
+    letter-spacing: 0;
+    color: #27577D;
+    margin: 28px 0;
+
+}
+
 .text-block {
     margin-bottom: var(--space-xl);
 
@@ -204,6 +215,21 @@
 
 .highlight {
     color: #27577D;
+}
+
+/* Centered Image */
+.centered-image {
+    display: flex;
+    justify-content: center;
+    margin-top: 36px;
+    margin-bottom: 60px;
+}
+
+.screen-preview {
+    max-width: 805px;
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* Hero Section */
