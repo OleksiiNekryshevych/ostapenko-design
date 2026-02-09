@@ -37,23 +37,108 @@ export default function VirtuCarePage() {
 
     return (
         <main className={styles['project-page']}>
+            {/* Back Button */}
+            <div className="container">
+                <BackButton />
+            </div>
+
             {/* Header */}
             <header className={styles['project-header']}>
                 <div className="container">
-                    <BackButton />
                     <div className={styles['header-content']}>
                         <div className={styles['logo-wrapper']}>
                             <Image
                                 src={`${basePath}/virtu-care/Group 8.svg`}
                                 alt="VirtuCare Logo"
-                                width={48}
-                                height={48}
+                                width={137}
+                                height={121}
                             />
                         </div>
                         <h1 className={styles['project-title']}>VirtuCare</h1>
                     </div>
+                    <p className={styles['project-subtitle']}>
+                        Experience quality care from the comfort of your own home
+                    </p>
                 </div>
             </header>
+
+            {/* Main Idea & Solution Cards */}
+            <section className={styles['intro-section']}>
+                <div className="container">
+                    <div className={styles['intro-card']}>
+                        <div className={styles['card-label']}>
+                            <span className={styles['card-number']}>01</span>
+                            <span className={styles['card-title']}>Main idea</span>
+                        </div>
+                        <div className={styles['card-content']}>
+                            <p>
+                                Telehealth websites and platforms are becoming increasingly important in today's healthcare landscape.
+                            </p>
+                            <p>
+                                These platforms provide individuals with convenient and accessible options for receiving medical care and advice, allowing patients to connect with healthcare providers from the comfort of their own homes.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className={styles['intro-card']}>
+                        <div className={styles['card-label']}>
+                            <span className={styles['card-number']}>02</span>
+                            <span className={styles['card-title']}>Solution</span>
+                        </div>
+                        <div className={styles['card-content']}>
+                            <p>
+                                VirtueCare is an all-in-one health ecosystem designed to bridge the gap between clinical consultation and daily self-management. It solves the fragmentation problem by centralizing:
+                            </p>
+                            <ul className={styles['solution-list']}>
+                                <li><strong>Synchronous Care:</strong> Video consultations (Telehealth).</li>
+                                <li><strong>Asynchronous Care:</strong> Chat and file sharing.</li>
+                                <li><strong>Self-Management:</strong> Medication tracking, symptom analytics, and educational content (Health Hub).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* UX & UI Design Strategy */}
+            <section className={styles['text-section']}>
+                <div className="container">
+                    <h2 className={styles['section-heading']}>UX & UI Design Strategy</h2>
+
+                    <div className={styles['text-block']}>
+                        <h3 className={styles['block-title']}>
+                            <span className={styles['title-underline']}>User Experience (UX) Goal:</span> Reducing "Medical Anxiety"
+                        </h3>
+                        <p className={styles['block-text']}>
+                            My primary UX goal was to reduce the friction and anxiety associated with medical management.
+                        </p>
+                        <ul className={styles['content-list']}>
+                            <li>
+                                <span className={styles['list-label']}>Flow:</span> I simplified the user journey for booking. As seen in the Doctor Profile screen, the decision matrix (Reviews + Bio + Calendar) is unified to prevent decision paralysis.
+                            </li>
+                            <li>
+                                <span className={styles['list-label']}>Information Architecture:</span> I grouped complex medical data into digestible tabs (Treatment, Analytics, General Info) to prevent users from feeling overwhelmed by their own medical records.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div className={styles['text-block']}>
+                        <h3 className={styles['block-title']}>
+                            <span className={styles['title-underline']}>User Interface (UI) Goal:</span> Trust & Clarity via Data Visualization
+                        </h3>
+                        <p className={styles['block-text']}>
+                            My primary UX goal was to reduce the friction and anxiety associated with medical management.
+                        </p>
+                        <ul className={styles['content-list']}>
+                            <li>
+                                <span className={styles['list-label']}>Color Palette:</span> I utilized a soft blue and white primary palette (evoking hygiene and trust) with pastel accents for categorization. This avoids the sterile, cold look of traditional hospital software.
+                            </li>
+                            <li>
+                                <span className={styles['list-label']}>Typography:</span> A sans-serif typeface ensures high readability, which is crucial for accessibility in health tech.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
             {/* Hero Image */}
             <section className={styles['hero-section']}>
