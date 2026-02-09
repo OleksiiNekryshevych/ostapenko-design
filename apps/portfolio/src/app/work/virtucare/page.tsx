@@ -140,6 +140,65 @@ export default function VirtuCarePage() {
                 </div>
             </section>
 
+            {/* Colors Section */}
+            <section className={styles['text-section']}>
+                <div className="container">
+                    <h2 className={styles['section-heading']}>Colors</h2>
+
+                    <p className={styles['block-text']}>
+                        In telemedicine, color is functional, not just decorative. Patients often open health apps while feeling vulnerable, anxious, or unwell. Therefore, the UI must avoid over-stimulation and instead foster a sense of calm, hygiene, and professional reliability.
+                    </p>
+
+                    <p className={styles['block-text']}>
+                        For VirtueCare, I chose a blue-monochromatic foundation—the industry standard for trust—paired with a specific functional red.
+                    </p>
+
+                    {/* Color 1 */}
+                    <div className={styles['color-item']}>
+                        <div className={styles['color-swatch-row']}>
+                            <div className={styles['color-octagon']} style={{ backgroundColor: '#27577D' }} />
+                            <span className={styles['color-hex']}>#27577D</span>
+                        </div>
+                        <p className={styles['block-text']}>
+                            <span className={styles.highlight}>Role:</span> Primary Text & Branding
+                        </p>
+                        <p className={styles['block-text']}>
+                            <span className={styles.highlight}>Why:</span> This deep blue serves as a softer, more approachable alternative to pure black for typography. It provides high WCAG (accessibility) contrast ratios for readability while projecting authority, stability, and medical expertise.
+                        </p>
+                    </div>
+
+                    {/* Color 2 */}
+                    <div className={styles['color-item']}>
+                        <div className={styles['color-swatch-row']}>
+                            <div className={styles['color-octagon']} style={{ backgroundColor: '#DEF1FF' }} />
+                            <span className={styles['color-hex']}>#DEF1FF</span>
+                        </div>
+                        <p className={styles['block-text']}>
+                            <span className={styles.highlight}>Role:</span> Active States & Primary Accents.
+                        </p>
+                        <p className={styles['block-text']}>
+                            <span className={styles.highlight}>Why:</span> Used for buttons and active selections, this shade guides the user's eye without being aggressive. It bridges the gap between clinical sterility and a friendly, consumer-facing app experience.
+                        </p>
+                    </div>
+
+                    {/* Color 3 - Dual colors */}
+                    <div className={styles['color-item']}>
+                        <div className={styles['color-swatch-row']}>
+                            <div className={`${styles['color-octagon']} ${styles['color-octagon-first']}`} style={{ backgroundColor: '#EBF3F9' }} />
+                            <div className={`${styles['color-octagon']} ${styles['color-octagon-second']}`} style={{ backgroundColor: '#F9FBFC' }} />
+                            <span className={styles['color-hex']}>#EBF3F9</span>
+                            <span className={styles['color-hex']}>#F9FBFC</span>
+                        </div>
+                        <p className={styles['block-text']}>
+                            <span className={styles.highlight}>Role:</span> Backgrounds & Cards.
+                        </p>
+                        <p className={styles['block-text']}>
+                            <span className={styles.highlight}>Why:</span> Pure white (#FFFFFF) can sometimes cause eye strain on digital screens, especially during late-night use. These subtle off-white and cool grey tones create a "clean" and "sterile" canvas that feels hygienic and organized, allowing the content (medical data) to breathe.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
             {/* Typography Section */}
             <section className={styles['text-section']}>
                 <div className="container">

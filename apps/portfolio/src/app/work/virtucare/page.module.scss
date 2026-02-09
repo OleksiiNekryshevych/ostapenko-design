@@ -2,6 +2,7 @@
 
 .project-page {
     padding-bottom: var(--space-5xl);
+    background: #fff;
 }
 
 /* Header */
@@ -217,6 +218,49 @@
     color: #27577D;
 }
 
+/* Color Swatches */
+.color-item {
+    margin-bottom: 50px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.color-swatch-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--space-lg);
+    margin-bottom: 28px;
+}
+
+.color-octagon {
+    width: 75px;
+    height: 75px;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+
+.color-octagon-first {
+    z-index: 2;
+    position: relative;
+}
+
+.color-octagon-second {
+    z-index: 1;
+    position: relative;
+    margin-left: -60px;
+}
+
+.color-hex {
+    font-family: var(--font-sans);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0;
+    color: var(--text);
+}
+
 /* Centered Image */
 .centered-image {
     display: flex;
@@ -371,41 +415,6 @@
     line-height: 1.6;
     color: var(--muted-text);
     margin: 0;
-}
-
-/* Colors Grid */
-.colors-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: var(--space-lg);
-    margin-top: var(--space-md);
-}
-
-.color-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-xs);
-}
-
-.color-swatch {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: 1px solid #EBEBEB;
-}
-
-.color-name {
-    font-family: var(--font-sans);
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--text);
-}
-
-.color-hex {
-    font-family: var(--font-sans);
-    font-size: 12px;
-    color: var(--muted-text);
 }
 
 /* Typography Showcase */
