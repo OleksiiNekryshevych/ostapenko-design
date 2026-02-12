@@ -35,16 +35,14 @@ export function Works() {
                             className={styles['project-link']}
                         >
                             <Card className={styles['project-card']}>
-                                <div
-                                    className={styles['card-image']}
-                                    style={project.accentColor ? { backgroundColor: project.accentColor } : undefined}
-                                >
+                                <div className={styles['card-image']}>
                                     <Image
                                         src={project.image}
                                         alt={project.title}
                                         width={600}
                                         height={450}
                                         className={styles['project-image']}
+                                        style={project.accentColor ? { backgroundColor: project.accentColor } : undefined}
                                     />
                                 </div>
                                 <div className={styles['card-content']}>

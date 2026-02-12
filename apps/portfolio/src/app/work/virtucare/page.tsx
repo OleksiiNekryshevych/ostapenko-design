@@ -472,7 +472,7 @@ export default function VirtuCarePage() {
                             <span className={styles['list-label']}>Centered Control Hub:</span> Groups all essential call actions (Microphone, End Call, Camera) in a single bottom bar for fast, intuitive access during the session.
                         </li>
                         <li>
-                            <span className={styles['list-label']}>Secondary Utility Access:</span> Places "View" (medical data) and "Chat" (messaging) on the periphery, allowing the patient to reference health info without breaking eye contact with the doctor.
+                            <span className={styles['list-label']}>Secondary Utility Access:</span> "View" (medical data) and "Chat" (messaging) are moved to the sides of the screen. This lets the patient look at their health info while still keeping their eyes on the doctor.
                         </li>
                     </ul>
 
