@@ -194,7 +194,7 @@
     line-height: 1.6;
     letter-spacing: 0;
     color: var(--text);
-    margin: 0 0 28px 0;
+    margin: 0 0 12px 0;
 
     &:last-child {
         margin-bottom: 0;
@@ -212,7 +212,7 @@
         font-weight: 300;
         line-height: 1.6;
         color: var(--text);
-        margin-bottom: var(--space-sm);
+        margin-bottom: var(--space-xs);
 
         &::marker {
             color: #27577D;
@@ -234,7 +234,7 @@
 
 /* Color Swatches */
 .color-item {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 
     &:last-child {
         margin-bottom: 0;
