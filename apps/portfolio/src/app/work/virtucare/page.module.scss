@@ -2,7 +2,6 @@
 
 .project-page {
     padding-bottom: var(--space-5xl);
-    background: #fff;
 }
 
 /* Header */
@@ -54,32 +53,43 @@
 
 .intro-card {
     display: flex;
+    align-items: center;
     gap: var(--space-2xl);
     padding: var(--space-xl) var(--space-2xl);
     background: #F0F4F780;
     margin-bottom: var(--space-md);
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-lg);
+        padding: var(--space-lg);
+    }
 }
 
 .card-label {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: var(--space-xs);
     min-width: 100px;
     flex-shrink: 0;
+
+    font-family: var(--font-sans);
+    font-size: 28px;
+    color: #27577D;
+
+    @media (max-width: 768px) {
+        font-size: 18px;
+    }
 }
 
 .card-number {
-    font-family: var(--font-sans);
-    font-size: 24px;
-    font-weight: 400;
-    color: #27577D;
+    font-weight: 300;
 }
 
 .card-title {
-    font-family: var(--font-sans);
-    font-size: 20px;
-    font-weight: 600;
-    color: #27577D;
+    font-weight: 500;
 }
 
 .card-content {
@@ -91,7 +101,7 @@
         font-weight: 400;
         line-height: 1.7;
         color: var(--text);
-        margin: 0 0 var(--space-sm) 0;
+        margin: 0 0 var(--space-md) 0;
 
         &:last-child {
             margin-bottom: 0;
@@ -138,7 +148,7 @@
         content: '';
         width: 10px;
         height: 10px;
-        background: #E74C3C;
+        background: #A40000;
         border-radius: 50%;
         flex-shrink: 0;
     }
@@ -204,6 +214,10 @@
         color: var(--text);
         margin-bottom: var(--space-sm);
 
+        &::marker {
+            color: #27577D;
+        }
+
         &:last-child {
             margin-bottom: 0;
         }
@@ -239,17 +253,6 @@
     width: 75px;
     height: 75px;
     clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-}
-
-.color-octagon-first {
-    z-index: 2;
-    position: relative;
-}
-
-.color-octagon-second {
-    z-index: 1;
-    position: relative;
-    margin-left: -60px;
 }
 
 .color-hex {
@@ -415,6 +418,41 @@
     line-height: 1.6;
     color: var(--muted-text);
     margin: 0;
+}
+
+/* Colors Grid */
+.colors-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--space-lg);
+    margin-top: var(--space-md);
+}
+
+.color-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.color-swatch {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid #EBEBEB;
+}
+
+.color-name {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+}
+
+.color-hex {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    color: var(--muted-text);
 }
 
 /* Typography Showcase */
