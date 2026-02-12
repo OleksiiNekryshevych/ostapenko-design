@@ -252,7 +252,44 @@
 .color-octagon {
     width: 75px;
     height: 75px;
-    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M26.5 3.5 Q30 0 35 0 L65 0 Q70 0 73.5 3.5 L96.5 26.5 Q100 30 100 35 L100 65 Q100 70 96.5 73.5 L73.5 96.5 Q70 100 65 100 L35 100 Q30 100 26.5 96.5 L3.5 73.5 Q0 70 0 65 L0 35 Q0 30 3.5 26.5 Z' fill='black'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M26.5 3.5 Q30 0 35 0 L65 0 Q70 0 73.5 3.5 L96.5 26.5 Q100 30 100 35 L100 65 Q100 70 96.5 73.5 L73.5 96.5 Q70 100 65 100 L35 100 Q30 100 26.5 96.5 L3.5 73.5 Q0 70 0 65 L0 35 Q0 30 3.5 26.5 Z' fill='black'/%3E%3C/svg%3E");
+    -webkit-mask-size: cover;
+    mask-size: cover;
+}
+
+.color-octagon-first {
+    z-index: 2;
+    position: relative;
+}
+
+.color-octagon-second {
+    z-index: 1;
+    position: relative;
+    margin-left: -60px;
+    -webkit-mask-image: none;
+    mask-image: none;
+    background: transparent !important;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M26.5 3.5 Q30 0 35 0 L65 0 Q70 0 73.5 3.5 L96.5 26.5 Q100 30 100 35 L100 65 Q100 70 96.5 73.5 L73.5 96.5 Q70 100 65 100 L35 100 Q30 100 26.5 96.5 L3.5 73.5 Q0 70 0 65 L0 35 Q0 30 3.5 26.5 Z' fill='black'/%3E%3C/svg%3E");
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M26.5 3.5 Q30 0 35 0 L65 0 Q70 0 73.5 3.5 L96.5 26.5 Q100 30 100 35 L100 65 Q100 70 96.5 73.5 L73.5 96.5 Q70 100 65 100 L35 100 Q30 100 26.5 96.5 L3.5 73.5 Q0 70 0 65 L0 35 Q0 30 3.5 26.5 Z' fill='black'/%3E%3C/svg%3E");
+        -webkit-mask-size: cover;
+        mask-size: cover;
+    }
+
+    &::before {
+        inset: 0;
+        background: #EBF3F9;
+    }
+
+    &::after {
+        inset: 1px;
+        background: #F9FBFC;
+    }
 }
 
 .color-hex {
