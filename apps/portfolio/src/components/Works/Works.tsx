@@ -21,6 +21,13 @@ export function Works() {
             accentColor: undefined, // No accent color needed - image fills entire space
             image: `${basePath}/project-2.jpg`
         },
+        {
+            title: 'Dostupno.UA/OpenRoad',
+            slug: 'dostupno',
+            tags: ['Inclusive', 'Charity', 'Web Application', 'UX Review'],
+            accentColor: '#F0F9EC',
+            image: `${basePath}/project-3.jpg`
+        },
     ];
 
     return (
