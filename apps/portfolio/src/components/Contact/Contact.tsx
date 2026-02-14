@@ -6,13 +6,75 @@ import { Button } from '@ostapenko-design/ui';
 
 type SubmitStatus = 'idle' | 'submitting' | 'success' | 'error';
 
+interface FieldErrors {
+    firstName?: string;
+    lastName?: string;
+    email?: string;
+    message?: string;
+}
+
+function validateFields(form: HTMLFormElement): FieldErrors {
+    const errors: FieldErrors = {};
+    const firstName = (form.elements.namedItem('firstName') as HTMLInputElement).value.trim();
+    const lastName = (form.elements.namedItem('lastName') as HTMLInputElement).value.trim();
+    const email = (form.elements.namedItem('email') as HTMLInputElement).value.trim();
+    const message = (form.elements.namedItem('message') as HTMLTextAreaElement).value.trim();
+
+    if (!firstName) errors.firstName = 'First name is required';
+    if (!lastName) errors.lastName = 'Last name is required';
+    if (!email) {
+        errors.email = 'Email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        errors.email = 'Please enter a valid email';
+    }
+    if (!message) errors.message = 'Project description is required';
+
+    return errors;
+}
+
 export function Contact() {
     const [status, setStatus] = useState<SubmitStatus>('idle');
     const [snackbarVisible, setSnackbarVisible] = useState(false);
+    const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
+    const [touched, setTouched] = useState<Set<string>>(new Set());
     const formRef = useRef<HTMLFormElement>(null);
+
+    const handleBlur = (fieldName: string) => {
+        setTouched(prev => new Set(prev).add(fieldName));
+
+        if (formRef.current) {
+            const errors = validateFields(formRef.current);
+            // Only show error for this specific field
+            setFieldErrors(prev => ({
+                ...prev,
+                [fieldName]: errors[fieldName as keyof FieldErrors],
+            }));
+        }
+    };
+
+    const handleChange = (fieldName: string) => {
+        // Clear the error for this field on change if it was touched
+        if (touched.has(fieldName) && formRef.current) {
+            const errors = validateFields(formRef.current);
+            setFieldErrors(prev => ({
+                ...prev,
+                [fieldName]: errors[fieldName as keyof FieldErrors],
+            }));
+        }
+    };
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        const errors = validateFields(e.currentTarget);
+
+        if (Object.keys(errors).length > 0) {
+            setFieldErrors(errors);
+            setTouched(new Set(Object.keys(errors)));
+            return;
+        }
+
+        setFieldErrors({});
         setStatus('submitting');
 
         const formData = new FormData(e.currentTarget);
@@ -26,6 +88,7 @@ export function Contact() {
             if (response.ok) {
                 setStatus('success');
                 formRef.current?.reset();
+                setTouched(new Set());
             } else {
                 setStatus('error');
             }
@@ -54,62 +117,87 @@ export function Contact() {
         setTimeout(() => setStatus('idle'), 300);
     };
 
+    const inputClass = (field: keyof FieldErrors) =>
+        `${styles.input} ${fieldErrors[field] ? styles['input-error'] : ''}`;
+
+    const labelClass = (field: keyof FieldErrors) =>
+        `${styles.label} ${fieldErrors[field] ? styles['label-error'] : ''}`;
+
     return (
         <section id="contact" className={styles.section}>
             <div className="container">
                 <div className={styles['contact-header']}>
                     <h2 className="section-title">Let's work together</h2>
-                    <p className="subtitle-text">Have an idea? Let's discuss it.</p>
+                    <p className="subtitle-text">Send me your details and a brief overview of what you're facing I'll be in touch soon.</p>
                 </div>
 
                 <div className={styles['contact-wrapper']}>
                     <form
                         ref={formRef}
                         onSubmit={handleSubmit}
+                        noValidate
                         className={styles['contact-form']}
                     >
                         <div className={styles.row}>
                             <div className={styles['form-group']}>
-                                <label className={styles.label} htmlFor="firstName">First Name*</label>
+                                <label className={labelClass('firstName')} htmlFor="firstName">First Name*</label>
                                 <input
                                     id="firstName"
                                     type="text"
                                     name="firstName"
-                                    required
-                                    className={styles.input}
+                                    className={inputClass('firstName')}
+                                    onBlur={() => handleBlur('firstName')}
+                                    onChange={() => handleChange('firstName')}
                                 />
+                                {fieldErrors.firstName && (
+                                    <span className={styles['field-error']}>{fieldErrors.firstName}</span>
+                                )}
                             </div>
+                        </div>
+                        <div className={styles.row}>
                             <div className={styles['form-group']}>
-                                <label className={styles.label} htmlFor="lastName">Last Name*</label>
+                                <label className={labelClass('lastName')} htmlFor="lastName">Last Name*</label>
                                 <input
                                     id="lastName"
                                     type="text"
                                     name="lastName"
-                                    required
-                                    className={styles.input}
+                                    className={inputClass('lastName')}
+                                    onBlur={() => handleBlur('lastName')}
+                                    onChange={() => handleChange('lastName')}
                                 />
+                                {fieldErrors.lastName && (
+                                    <span className={styles['field-error']}>{fieldErrors.lastName}</span>
+                                )}
                             </div>
                         </div>
 
                         <div className={styles['form-group']}>
-                            <label className={styles.label} htmlFor="email">Email*</label>
+                            <label className={labelClass('email')} htmlFor="email">Email*</label>
                             <input
                                 id="email"
                                 type="email"
                                 name="email"
-                                required
-                                className={styles.input}
+                                className={inputClass('email')}
+                                onBlur={() => handleBlur('email')}
+                                onChange={() => handleChange('email')}
                             />
+                            {fieldErrors.email && (
+                                <span className={styles['field-error']}>{fieldErrors.email}</span>
+                            )}
                         </div>
 
                         <div className={styles['form-group']}>
-                            <label className={styles.label} htmlFor="message">Brief Project Description*</label>
+                            <label className={labelClass('message')} htmlFor="message">Brief Project Description*</label>
                             <textarea
                                 id="message"
                                 name="message"
-                                required
-                                className={styles.textarea}
+                                className={`${styles.textarea} ${fieldErrors.message ? styles['input-error'] : ''}`}
+                                onBlur={() => handleBlur('message')}
+                                onChange={() => handleChange('message')}
                             ></textarea>
+                            {fieldErrors.message && (
+                                <span className={styles['field-error']}>{fieldErrors.message}</span>
+                            )}
                         </div>
 
                         <div className={styles['form-actions']}>

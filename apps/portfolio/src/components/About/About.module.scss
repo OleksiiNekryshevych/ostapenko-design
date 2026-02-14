@@ -3,6 +3,21 @@
     padding-bottom: var(--space-3xl);
 }
 
-.lead-text+.lead-text {
-    margin-top: var(--space-lg);
+.lead-text {
+    font-size: var(--text-xl);
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text);
+
+    margin-bottom: var(--space-lg);
+
+    &:not(:last-child) {
+        margin-bottom: var(--space-lg);
+    }
+}
+
+@media (max-width: 768px) {
+    .lead-text {
+        font-size: var(--text-2xl);
+    }
 }
