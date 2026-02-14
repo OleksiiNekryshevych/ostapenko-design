@@ -59,7 +59,7 @@ export function Contact() {
             <div className="container">
                 <div className={styles['contact-header']}>
                     <h2 className="section-title">Let's work together</h2>
-                    <p className="subtitle-text">Have an idea? Let's discuss it.</p>
+                    <p className="subtitle-text">Send me your details and a brief overview of what you're facing I’ll be in touch soon.</p>
                 </div>
 
                 <div className={styles['contact-wrapper']}>

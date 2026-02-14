@@ -7,19 +7,6 @@ export function Hero() {
         <section className={styles['hero-section']}>
             <div className="container">
                 <div className={styles['hero-main']}>
-                    <div className={styles['hero-content']}>
-                        <h1 className="display-title">
-                            UX/UI <br />
-                            Product Designer
-                        </h1>
-
-                        <div className={styles['hero-ctas']}>
-                            <Button href="#contact" variant="primary">Work with me</Button>
-                        </div>
-
-                        <p className={styles['hero-name']}>Alina Ostapenko</p>
-                    </div>
-
                     <div className={styles['hero-visual']}>
                         <div className={styles['image-wrapper']}>
                             <Image
@@ -31,6 +18,18 @@ export function Hero() {
                                 priority
                             />
                         </div>
+                    </div>
+                    <div className={styles['hero-content']}>
+                        <h1 className="display-title">
+                            UX/UI <br />
+                            Product Designer
+                        </h1>
+
+                        <div className={styles['hero-ctas']}>
+                            <Button href="#contact" variant="primary">Let’s Create</Button>
+                        </div>
+
+                        <p className={styles['hero-name']}>Alina Ostapenko</p>
                     </div>
                 </div>
             </div>
