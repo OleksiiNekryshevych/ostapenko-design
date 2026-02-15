@@ -21,6 +21,10 @@
     line-height: 1;
     color: var(--text);
     margin-bottom: var(--space-sm);
+
+    @media (max-width: 768px) {
+        font-size: 18px;
+    }
 }
 
 .stat-label {
@@ -29,17 +33,28 @@
     font-weight: 400;
     line-height: 30px;
     color: var(--text);
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+    }
 }
 
 @media (max-width: 768px) {
     .stats-grid {
-        flex-direction: column;
-        gap: var(--space-xl);
+        justify-content: center;
         align-items: center;
         text-align: center;
+        flex-wrap: wrap;
+        gap: 0
     }
 
     .stat {
-        align-items: center;
+        margin: 0 27px;
+
+        &:nth-child(3) {
+            margin-top: 16px;
+            width: 100%;
+            align-items: center;
+        }
     }
 }

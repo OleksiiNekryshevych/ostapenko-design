@@ -57,25 +57,60 @@
 
         img {
             width: 240px;
-            height: 240px;
+            height: auto;
         }
     }
 }
 
 @media (max-width: 768px) {
+    .hero-section {
+        margin-top: 12px;
+        margin-bottom: 24px;
+    }
+
     .hero-main {
-        flex-direction: column;
-        gap: var(--space-xl);
+        padding-bottom: 60px;
+        position: relative;
+    }
+
+    .hero-ctas {
+        position: absolute;
+        bottom: 0;
+        right: 50%;
+        transform: translateX(50%);
+        height: 44px;
+        width: 100%;
+        max-width: 358px;
+    }
+
+
+    .hero-main {
+        gap: 12px;
     }
 
     .hero-visual {
-        justify-content: center;
-        order: -1;
-        width: 100%;
+        flex: 1;
+        min-width: 0;
     }
 
-    .hero-content {
-        text-align: center;
-        align-items: center;
+    .image-wrapper {
+        padding: 20px;
+    }
+
+    .hero-content :global(.display-title) {
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    .hero-name {
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .hero-ctas .hero-btn {
+        padding-top: 6px;
+        padding-bottom: 6px;
+        width: 100%;
+        font-size: 16px;
     }
 }
