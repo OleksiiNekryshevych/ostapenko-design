@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import styles from './HeroStats.module.scss';
+import { Section } from '../Section/Section';
 
 interface Stat {
     number: string;
@@ -94,7 +95,7 @@ function AnimatedNumber({ value, delay = 0 }: { value: string; delay?: number })
 
 export function HeroStats() {
     return (
-        <section className={styles['hero-stats']}>
+        <Section>
             <div className="container">
                 <div className={styles['stats-grid']}>
                     {stats.map((stat, index) => (
@@ -105,6 +106,6 @@ export function HeroStats() {
                     ))}
                 </div>
             </div>
-        </section>
+        </Section>
     );
 }

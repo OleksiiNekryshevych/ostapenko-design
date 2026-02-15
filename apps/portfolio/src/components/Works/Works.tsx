@@ -2,6 +2,7 @@ import styles from './Works.module.scss';
 import { Card } from '@ostapenko-design/ui';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Section } from '../Section/Section';
 
 export function Works() {
     const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
@@ -31,8 +32,8 @@ export function Works() {
     ];
 
     return (
-        <section id="works" className={styles.section}>
-            <div className="container">
+        <Section id="works">
+            <div className={`container ${styles.section}`}>
                 <h2 className="section-title">Latest work</h2>
                 <div className={styles['works-grid']}>
                     {projects.map((project, index) => (
@@ -65,6 +66,6 @@ export function Works() {
                     ))}
                 </div>
             </div>
-        </section>
+        </Section>
     );
 }

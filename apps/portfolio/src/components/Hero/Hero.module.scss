@@ -1,6 +1,5 @@
 .hero-section {
     margin-top: var(--space-xl);
-    margin-bottom: var(--space-4xl);
 }
 
 .hero-main {
@@ -65,7 +64,6 @@
 @media (max-width: 768px) {
     .hero-section {
         margin-top: 12px;
-        margin-bottom: 24px;
     }
 
     .hero-main {

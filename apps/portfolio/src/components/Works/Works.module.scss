@@ -1,14 +1,17 @@
 .section {
     padding-top: 0;
     padding-bottom: 0;
-    margin-bottom: 50px;
 }
 
 .works-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-lg);
-    margin-top: var(--space-xl);
+    margin-top: 26px;
+
+    @media (max-width: 768px) {
+        margin-top: 24px;
+    }
 }
 
 .project-link {
@@ -70,10 +73,6 @@
 }
 
 @media (max-width: 768px) {
-    .section {
-        margin-bottom: 36px;
-    }
-
     .works-grid {
         grid-template-columns: 1fr;
     }
