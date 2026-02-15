@@ -15,9 +15,9 @@ export function SocialLinks({ className }: SocialLinksProps) {
     const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
     const socialLinks: SocialLink[] = [
-        { label: 'LinkedIn', href: 'https://linkedin.com', icon: `${basePath}/linkedin.svg` },
-        { label: 'WhatsApp', href: 'https://whatsapp.com', icon: `${basePath}/whatsapp.svg` },
-        { label: 'Telegram', href: 'https://t.me', icon: `${basePath}/telegram.svg` },
+        { label: 'LinkedIn', href: 'https://linkedin.com/in/alina-ostapenko-4121801a7/?skipRedirect=true', icon: `${basePath}/linkedin.svg` },
+        { label: 'WhatsApp', href: 'https://wa.me/380661444694', icon: `${basePath}/whatsapp.svg` },
+        { label: 'Telegram', href: 'https://t.me/ostapenkolina', icon: `${basePath}/telegram.svg` },
     ];
 
     return (
