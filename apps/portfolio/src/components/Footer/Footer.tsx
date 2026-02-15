@@ -16,8 +16,8 @@ export function Footer() {
                         <Image
                             src={`${basePath}/logo.png`}
                             alt="AO Logo"
-                            width={56}
-                            height={40}
+                            width={71}
+                            height={48}
                         />
                     </Link>
                     <p className={styles.branding}>Alina Ostapenko Design</p>
@@ -37,7 +37,7 @@ export function Footer() {
                         </a>
                     </div>
 
-                    <SocialLinks />
+                    <SocialLinks className={styles.social} />
                 </div>
             </div>
         </footer>

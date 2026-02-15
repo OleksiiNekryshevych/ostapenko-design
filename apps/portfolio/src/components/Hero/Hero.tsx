@@ -26,7 +26,7 @@ export function Hero() {
                         </h1>
 
                         <div className={styles['hero-ctas']}>
-                            <Button href="#contact" variant="primary">Let’s Create</Button>
+                            <Button href="#contact" variant="primary" className={styles['hero-btn']}>Let’s Create</Button>
                         </div>
 
                         <p className={styles['hero-name']}>Alina Ostapenko</p>
