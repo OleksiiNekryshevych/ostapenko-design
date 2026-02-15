@@ -140,6 +140,29 @@ export default function VirtuCarePage() {
                 </div>
             </section>
 
+            {/* Customer Journey Map */}
+            <section className={styles['text-section']}>
+                <div className="container">
+                    <h2 className={styles['section-heading']}>Customer Journey Map</h2>
+
+                    <h3 className={styles['block-title']}><span className={styles['title-underline']}>The "VirtueCare" Patient Experience.</span></h3>
+
+                    <p className={styles['block-text']}>
+                        Scenario: Andrea (32, Hyperthyroidism) needs to book a follow-up for recurring symptoms and manage her ongoing treatment without disrupting her work week.
+                    </p>
+
+                    <div className={styles['centered-image']}>
+                        <Image
+                            src={`${basePath}/virtu-care/virtue-care-1.jpg`}
+                            alt="Customer Journey Map"
+                            width={805}
+                            height={500}
+                            className={styles['screen-preview']}
+                        />
+                    </div>
+                </div>
+            </section>
+
             {/* Colors Section */}
             <section className={styles['text-section']}>
                 <div className="container">
@@ -195,6 +218,30 @@ export default function VirtuCarePage() {
                         <p className={styles['block-text']}>
                             <span className={styles.highlight}>Why:</span> Pure white (#FFFFFF) can sometimes cause eye strain on digital screens, especially during late-night use. These subtle off-white and cool grey tones create a "clean" and "sterile" canvas that feels hygienic and organized, allowing the content (medical data) to breathe.
                         </p>
+                    </div>
+
+                    <div className={styles['color-row']}>
+                        <div className={styles['color-octagon-wraper']}>
+                            <div className={styles['color-octagon']} style={{ backgroundColor: '#0D0C0C' }} />
+                        </div>
+                        <div className={styles['color-octagon-wraper']}>
+                            <div className={styles['color-octagon']} style={{ backgroundColor: '#CC3434' }} />
+                        </div>
+                        <div className={styles['color-octagon-wraper']}>
+                            <div className={styles['color-octagon']} style={{ backgroundColor: '#D1ECE6' }} />
+                        </div>
+                        <div className={styles['color-octagon-wraper']}>
+                            <div className={styles['color-octagon']} style={{ backgroundColor: '#FFE1C5' }} />
+                        </div>
+                        <div className={styles['color-octagon-wraper']}>
+                            <div className={styles['color-octagon']} style={{ backgroundColor: '#DBD8FF' }} />
+                        </div>
+                        <div className={styles['color-octagon-wraper']}>
+                            <div className={styles['color-octagon']} style={{ backgroundColor: '#FFF7BD' }} />
+                        </div>
+                        <div className={styles['color-octagon-wraper']}>
+                            <div className={styles['color-octagon']} style={{ backgroundColor: '#FFE28C' }} />
+                        </div>
                     </div>
                 </div>
             </section>
