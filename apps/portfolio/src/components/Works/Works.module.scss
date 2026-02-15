@@ -1,7 +1,6 @@
 .section {
     padding-top: 0;
     padding-bottom: 0;
-    margin-bottom: 50px;
 }
 
 .works-grid {
@@ -70,10 +69,6 @@
 }
 
 @media (max-width: 768px) {
-    .section {
-        margin-bottom: 36px;
-    }
-
     .works-grid {
         grid-template-columns: 1fr;
     }

@@ -1,11 +1,12 @@
 import styles from './Hero.module.scss';
 import { Button } from '@ostapenko-design/ui';
 import Image from 'next/image';
+import { Section } from '../Section/Section';
 
 export function Hero() {
     return (
-        <section className={styles['hero-section']}>
-            <div className="container">
+        <Section>
+            <div className={`container ${styles['hero-section']}`}>
                 <div className={styles['hero-main']}>
                     <div className={styles['hero-visual']}>
                         <div className={styles['image-wrapper']}>
@@ -33,6 +34,6 @@ export function Hero() {
                     </div>
                 </div>
             </div>
-        </section>
+        </Section>
     );
 }

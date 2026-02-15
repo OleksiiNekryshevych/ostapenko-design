@@ -3,6 +3,7 @@
 import { useState, useRef, FormEvent, useEffect } from 'react';
 import styles from './Contact.module.scss';
 import { Button } from '@ostapenko-design/ui';
+import { Section } from '../Section/Section';
 
 type SubmitStatus = 'idle' | 'submitting' | 'success' | 'error';
 
@@ -124,8 +125,8 @@ export function Contact() {
         `${styles.label} ${fieldErrors[field] ? styles['label-error'] : ''}`;
 
     return (
-        <section id="contact" className={styles.section}>
-            <div className="container">
+        <Section id="contact">
+            <div className={`container ${styles.section}`}>
                 <div className={styles['contact-header']}>
                     <h2 className="section-title">Let's work together</h2>
                     <p className="subtitle-text">Send me your details and a brief overview of what you're facing I'll be in touch soon.</p>
@@ -230,6 +231,6 @@ export function Contact() {
                     </button>
                 </div>
             </div>
-        </section>
+        </Section>
     );
 }
