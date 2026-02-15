@@ -27,12 +27,12 @@ export default function VirtuCarePage() {
     ];
 
     const finalScreens = [
-        { src: `${basePath}/virtu-care/Home Appt 1.jpg`, alt: 'Home Appointments' },
-        { src: `${basePath}/virtu-care/Health Hub 1.jpg`, alt: 'Health Hub' },
-        { src: `${basePath}/virtu-care/Make aapt 1.jpg`, alt: 'Make Appointment' },
-        { src: `${basePath}/virtu-care/Profile appt 1.jpg`, alt: 'Profile Appointments' },
-        { src: `${basePath}/virtu-care/Chat_Virtu 1.jpg`, alt: 'Chat Feature' },
-        { src: `${basePath}/virtu-care/Video call_Virtu.jpg`, alt: 'Video Call' },
+        { src: `${basePath}/virtu-care/Home-appt-1.jpg`, alt: 'Home Appointments' },
+        { src: `${basePath}/virtu-care/Health-hub-1.jpg`, alt: 'Health Hub' },
+        { src: `${basePath}/virtu-care/Make-appt-1.jpg`, alt: 'Make Appointment' },
+        { src: `${basePath}/virtu-care/Profile-appt-1.jpg`, alt: 'Profile Appointments' },
+        { src: `${basePath}/virtu-care/Chat-Virtu-1.jpg`, alt: 'Chat Feature' },
+        { src: `${basePath}/virtu-care/Video-call-Virtu.jpg`, alt: 'Video Call' },
     ];
 
     return (
