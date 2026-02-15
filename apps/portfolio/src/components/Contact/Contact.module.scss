@@ -231,6 +231,10 @@
 }
 
 @media (max-width: 768px) {
+    .section {
+        margin-bottom: 36px;
+    }
+
     .row {
         flex-direction: column;
         gap: var(--space-lg);

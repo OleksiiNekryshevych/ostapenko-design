@@ -40,6 +40,10 @@
 }
 
 @media (max-width: 768px) {
+    .hero-stats {
+        margin-bottom: 36px;
+    }
+
     .stats-grid {
         justify-content: center;
         align-items: center;

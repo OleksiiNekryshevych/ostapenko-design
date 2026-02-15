@@ -9,15 +9,11 @@
     line-height: 1.5;
     color: var(--text);
 
-    margin-bottom: var(--space-lg);
+    @media (max-width: 768px) {
+        font-size: 16px;
+    }
 
     &:not(:last-child) {
         margin-bottom: var(--space-lg);
-    }
-}
-
-@media (max-width: 768px) {
-    .lead-text {
-        font-size: 16px;
     }
 }
