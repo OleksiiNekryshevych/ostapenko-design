@@ -221,13 +221,27 @@ export default function VirtuCarePage() {
                     </div>
 
                     <div className={styles['color-row']}>
-                        <div className={styles['color-octagon']} style={{ backgroundColor: '#0D0C0C' }} />
-                        <div className={styles['color-octagon']} style={{ backgroundColor: '#CC3434' }} />
-                        <div className={styles['color-octagon']} style={{ backgroundColor: '#D1ECE6' }} />
-                        <div className={styles['color-octagon']} style={{ backgroundColor: '#FFE1C5' }} />
-                        <div className={styles['color-octagon']} style={{ backgroundColor: '#DBD8FF' }} />
-                        <div className={styles['color-octagon']} style={{ backgroundColor: '#FFF7BD' }} />
-                        <div className={styles['color-octagon']} style={{ backgroundColor: '#FFE28C' }} />
+                        <div className={styles['color-octagon-wraper']}>
+                            <div className={styles['color-octagon']} style={{ backgroundColor: '#0D0C0C' }} />
+                        </div>
+                        <div className={styles['color-octagon-wraper']}>
+                            <div className={styles['color-octagon']} style={{ backgroundColor: '#CC3434' }} />
+                        </div>
+                        <div className={styles['color-octagon-wraper']}>
+                            <div className={styles['color-octagon']} style={{ backgroundColor: '#D1ECE6' }} />
+                        </div>
+                        <div className={styles['color-octagon-wraper']}>
+                            <div className={styles['color-octagon']} style={{ backgroundColor: '#FFE1C5' }} />
+                        </div>
+                        <div className={styles['color-octagon-wraper']}>
+                            <div className={styles['color-octagon']} style={{ backgroundColor: '#DBD8FF' }} />
+                        </div>
+                        <div className={styles['color-octagon-wraper']}>
+                            <div className={styles['color-octagon']} style={{ backgroundColor: '#FFF7BD' }} />
+                        </div>
+                        <div className={styles['color-octagon-wraper']}>
+                            <div className={styles['color-octagon']} style={{ backgroundColor: '#FFE28C' }} />
+                        </div>
                     </div>
                 </div>
             </section>
