@@ -27,12 +27,12 @@ export default function VirtuCarePage() {
     ];
 
     const finalScreens = [
-        { src: `${basePath}/virtu-care/Home-appt-1.jpg`, alt: 'Home Appointments' },
-        { src: `${basePath}/virtu-care/Health-hub-1.jpg`, alt: 'Health Hub' },
-        { src: `${basePath}/virtu-care/Make-appt-1.jpg`, alt: 'Make Appointment' },
+        { src: `${basePath}/virtu-care/Home-Appt-1.jpg`, alt: 'Home Appointments' },
+        { src: `${basePath}/virtu-care/Health-Hub-1.jpg`, alt: 'Health Hub' },
+        { src: `${basePath}/virtu-care/Make-aapt-1.jpg`, alt: 'Make Appointment' },
         { src: `${basePath}/virtu-care/Profile-appt-1.jpg`, alt: 'Profile Appointments' },
-        { src: `${basePath}/virtu-care/Chat-Virtu-1.jpg`, alt: 'Chat Feature' },
-        { src: `${basePath}/virtu-care/Video-call-Virtu.jpg`, alt: 'Video Call' },
+        { src: `${basePath}/virtu-care/Chat_Virtu-1.jpg`, alt: 'Chat Feature' },
+        { src: `${basePath}/virtu-care/Video-call_Virtu.jpg`, alt: 'Video Call' },
     ];
 
     return (
@@ -48,7 +48,7 @@ export default function VirtuCarePage() {
                     <div className={styles['header-content']}>
                         <div className={styles['logo-wrapper']}>
                             <Image
-                                src={`${basePath}/virtu-care/Group 8.svg`}
+                                src={`${basePath}/virtu-care/Group-8.svg`}
                                 alt="VirtuCare Logo"
                                 width={137}
                                 height={121}
@@ -242,7 +242,7 @@ export default function VirtuCarePage() {
 
                     <div className={styles['centered-image']}>
                         <Image
-                            src={`${basePath}/virtu-care/Home Appt 1.jpg`}
+                            src={`${basePath}/virtu-care/Home-Appt-1.jpg`}
                             alt="Home Appointments Screen"
                             width={805}
                             height={500}
@@ -276,7 +276,7 @@ export default function VirtuCarePage() {
 
                     <div className={styles['centered-image']}>
                         <Image
-                            src={`${basePath}/virtu-care/Make aapt 1.jpg`}
+                            src={`${basePath}/virtu-care/Make-aapt-1.jpg`}
                             alt="Doctor Profile & Appointment Scheduling Screen"
                             width={805}
                             height={500}
@@ -307,7 +307,7 @@ export default function VirtuCarePage() {
 
                     <div className={styles['centered-image']}>
                         <Image
-                            src={`${basePath}/virtu-care/Profikle 1.jpg`}
+                            src={`${basePath}/virtu-care/Profikle-1.jpg`}
                             alt="Patient Stats & Analytics Screen"
                             width={805}
                             height={500}
@@ -332,7 +332,7 @@ export default function VirtuCarePage() {
 
                     <div className={styles['centered-image']}>
                         <Image
-                            src={`${basePath}/virtu-care/profile appt 1.jpg`}
+                            src={`${basePath}/virtu-care/Profile-appt-1.jpg`}
                             alt="Appointment History Screen"
                             width={805}
                             height={500}
@@ -363,7 +363,7 @@ export default function VirtuCarePage() {
 
                     <div className={styles['centered-image']}>
                         <Image
-                            src={`${basePath}/virtu-care/Profile_Personal info 1.jpg`}
+                            src={`${basePath}/virtu-care/Profile_Personal-info-1.jpg`}
                             alt="Personal Info & Health Reports Screen"
                             width={805}
                             height={500}
@@ -397,7 +397,7 @@ export default function VirtuCarePage() {
 
                     <div className={styles['centered-image']}>
                         <Image
-                            src={`${basePath}/virtu-care/Health Status 2.jpg`}
+                            src={`${basePath}/virtu-care/Health-Status-2.jpg`}
                             alt="Health Status & Treatment Details Screen"
                             width={805}
                             height={500}
@@ -425,7 +425,7 @@ export default function VirtuCarePage() {
 
                     <div className={styles['centered-image']}>
                         <Image
-                            src={`${basePath}/virtu-care/Chat_Virtu 1.jpg`}
+                            src={`${basePath}/virtu-care/Chat_Virtu-1.jpg`}
                             alt="Telemedicine Chat Interface Screen"
                             width={805}
                             height={500}
@@ -453,7 +453,7 @@ export default function VirtuCarePage() {
 
                     <div className={styles['centered-image']}>
                         <Image
-                            src={`${basePath}/virtu-care/Health Hub 1.jpg`}
+                            src={`${basePath}/virtu-care/Health-Hub-1.jpg`}
                             alt="Health Hub Screen"
                             width={805}
                             height={500}
@@ -478,7 +478,7 @@ export default function VirtuCarePage() {
 
                     <div className={styles['centered-image']}>
                         <Image
-                            src={`${basePath}/virtu-care/Video call_Virtu.jpg`}
+                            src={`${basePath}/virtu-care/Video-call_Virtu.jpg`}
                             alt="Video Consultation Screen"
                             width={805}
                             height={500}
