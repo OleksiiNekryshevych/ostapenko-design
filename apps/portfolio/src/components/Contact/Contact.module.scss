@@ -235,6 +235,15 @@
         gap: var(--space-lg);
     }
 
+    .form-actions {
+
+        button,
+        a {
+            width: 100%;
+            max-width: 385px;
+        }
+    }
+
     .snackbar {
         bottom: var(--space-lg);
         left: var(--space-md);
