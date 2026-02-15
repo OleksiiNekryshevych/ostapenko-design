@@ -8,6 +8,10 @@
 .project-header {
     padding: var(--space-3xl) 0;
     text-align: center;
+
+    @media (max-width: 768px) {
+        padding: var(--space-lg) 0;
+    }
 }
 
 .header-content {
@@ -20,10 +24,15 @@
 
 .logo-wrapper {
     width: 137px;
-    height: 121px;
+    // height: 121px;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 768px) {
+        width: 53px;
+    }
 }
 
 .project-title {
@@ -33,6 +42,10 @@
     line-height: 1.6;
     color: #27577D;
     margin: 0;
+
+    @media (max-width: 768px) {
+        font-size: 24px;
+    }
 }
 
 .project-subtitle {
@@ -44,6 +57,10 @@
     color: var(--text);
     max-width: 700px;
     margin: 0 auto;
+
+    @media (max-width: 768px) {
+        font-size: 18px;
+    }
 }
 
 /* Intro Section - Main Idea & Solution Cards */
@@ -62,7 +79,7 @@
     @media (max-width: 768px) {
         flex-direction: column;
         align-items: center;
-        gap: var(--space-lg);
+        gap: var(--space-sm);
         padding: var(--space-lg);
     }
 }
@@ -249,11 +266,20 @@
     margin-bottom: 20px;
 }
 
+.color-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 60px;
+    gap: var(--space-2xl);
+    flex-wrap: wrap;
+}
+
 .color-octagon {
     width: 75px;
     height: 75px;
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M26.5 3.5 Q30 0 35 0 L65 0 Q70 0 73.5 3.5 L96.5 26.5 Q100 30 100 35 L100 65 Q100 70 96.5 73.5 L73.5 96.5 Q70 100 65 100 L35 100 Q30 100 26.5 96.5 L3.5 73.5 Q0 70 0 65 L0 35 Q0 30 3.5 26.5 Z' fill='black'/%3E%3C/svg%3E");
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M26.5 3.5 Q30 0 35 0 L65 0 Q70 0 73.5 3.5 L96.5 26.5 Q100 30 100 35 L100 65 Q100 70 96.5 73.5 L73.5 96.5 Q70 100 65 100 L35 100 Q30 100 26.5 96.5 L3.5 73.5 Q0 70 0 65 L0 35 Q0 30 3.5 26.5 Z' fill='black'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M22.5 11 Q25 6.7 30 6.7 L70 6.7 Q75 6.7 77.5 11 L97.5 45.7 Q100 50 97.5 54.3 L77.5 89 Q75 93.3 70 93.3 L30 93.3 Q25 93.3 22.5 89 L2.5 54.3 Q0 50 2.5 45.7 Z' fill='black'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M22.5 11 Q25 6.7 30 6.7 L70 6.7 Q75 6.7 77.5 11 L97.5 45.7 Q100 50 97.5 54.3 L77.5 89 Q75 93.3 70 93.3 L30 93.3 Q25 93.3 22.5 89 L2.5 54.3 Q0 50 2.5 45.7 Z' fill='black'/%3E%3C/svg%3E");
     -webkit-mask-size: cover;
     mask-size: cover;
 }
@@ -275,8 +301,8 @@
     &::after {
         content: '';
         position: absolute;
-        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M26.5 3.5 Q30 0 35 0 L65 0 Q70 0 73.5 3.5 L96.5 26.5 Q100 30 100 35 L100 65 Q100 70 96.5 73.5 L73.5 96.5 Q70 100 65 100 L35 100 Q30 100 26.5 96.5 L3.5 73.5 Q0 70 0 65 L0 35 Q0 30 3.5 26.5 Z' fill='black'/%3E%3C/svg%3E");
-        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M26.5 3.5 Q30 0 35 0 L65 0 Q70 0 73.5 3.5 L96.5 26.5 Q100 30 100 35 L100 65 Q100 70 96.5 73.5 L73.5 96.5 Q70 100 65 100 L35 100 Q30 100 26.5 96.5 L3.5 73.5 Q0 70 0 65 L0 35 Q0 30 3.5 26.5 Z' fill='black'/%3E%3C/svg%3E");
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M22.5 11 Q25 6.7 30 6.7 L70 6.7 Q75 6.7 77.5 11 L97.5 45.7 Q100 50 97.5 54.3 L77.5 89 Q75 93.3 70 93.3 L30 93.3 Q25 93.3 22.5 89 L2.5 54.3 Q0 50 2.5 45.7 Z' fill='black'/%3E%3C/svg%3E");
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M22.5 11 Q25 6.7 30 6.7 L70 6.7 Q75 6.7 77.5 11 L97.5 45.7 Q100 50 97.5 54.3 L77.5 89 Q75 93.3 70 93.3 L30 93.3 Q25 93.3 22.5 89 L2.5 54.3 Q0 50 2.5 45.7 Z' fill='black'/%3E%3C/svg%3E");
         -webkit-mask-size: cover;
         mask-size: cover;
     }
