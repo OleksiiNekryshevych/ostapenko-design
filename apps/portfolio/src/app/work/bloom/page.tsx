@@ -25,41 +25,58 @@ export default function BloomPage() {
                             <Image
                                 src={`${basePath}/bloom/bloom-logo.png`}
                                 alt="Bloom Logo"
-                                width={100}
-                                height={100}
+                                width={261}
+                                height={242}
                                 style={{ width: '100%', height: 'auto' }}
                             />
                         </div>
                         <h1 className={styles['project-title']}>Bloom</h1>
                     </div>
-                    <p className={styles['project-subtitle']}>
-                        A wellbeing and mental health mobile application
-                    </p>
+                    <div className={styles['text-block']}>
+                        <p className={styles['block-text']}>
+                            Bloom is a minimalist mental health companion designed to bridge the gap between "tracking data" and "understanding emotions.
+                            Unlike traditional mood trackers that feel like spreadsheets, Bloom uses a tactile, color-driven interface to make emotional reflection a seamless part of a user’s daily ritual.
+                        </p>
+                    </div>
                 </div>
             </header>
 
             {/* Main Idea & Solution Cards */}
-            <section className={styles['intro-section']}>
+            <section className={styles.section}>
                 <div className="container">
                     <div className={styles['intro-card']}>
                         <div className={styles['card-label']}>
-                            <span className={styles['card-number']}>01</span>
-                            <span className={styles['card-title']}>Main idea</span>
+                            <div className={styles['card-image']}>
+                                <Image
+                                    src={`${basePath}/bloom/bloom-logo.png`}
+                                    alt="Bloom Logo"
+                                    width={63}
+                                    height={57}
+                                    style={{ width: '100%', height: 'auto' }}
+                                />
+                            </div>
+                            <span className={styles['card-title']}>The Problem</span>
                         </div>
                         <div className={styles['card-content']}>
-                            <p>
-                                Mental health awareness is growing, yet many struggle to find accessible, daily tools for emotional regulation. Bloom aims to bridge this gap.
-                            </p>
-                            <p>
-                                The platform provides individuals with intuitive tracking and journaling features, helping users understand their emotional patterns and improve their mental wellbeing through consistent, small actions.
-                            </p>
+                            <ul className={styles['solution-list']}>
+                                <li><strong>Lack of Context: </strong> Users see a "bad  mood" on a chart but don't understand the triggers behind it.</li>
+                                <li><strong>Clinical Feel:</strong> Cold, sterile interfaces can make users feel like "patients" rather than people seeking growth</li>
+                            </ul>
                         </div>
                     </div>
 
                     <div className={styles['intro-card']}>
                         <div className={styles['card-label']}>
-                            <span className={styles['card-number']}>02</span>
-                            <span className={styles['card-title']}>Solution</span>
+                            <div className={styles['card-image']}>
+                                <Image
+                                    src={`${basePath}/bloom/bloom-logo.png`}
+                                    alt="Bloom Logo"
+                                    width={63}
+                                    height={57}
+                                    style={{ width: '100%', height: 'auto' }}
+                                />
+                            </div>
+                            <span className={styles['card-title']}>The Solution</span>
                         </div>
                         <div className={styles['card-content']}>
                             <p>
@@ -76,16 +93,13 @@ export default function BloomPage() {
             </section>
 
             {/* UX & UI Design Strategy */}
-            <section className={styles['text-section']}>
+            <section className={styles.section}>
                 <div className="container">
-                    <h2 className={styles['section-heading']}>UX & UI Design Strategy</h2>
+                    <h2 className={styles['section-heading']}>UX Design Strategy</h2>
 
                     <div className={styles['text-block']}>
-                        <h3 className={styles['block-title']}>
-                            <span className={styles['title-underline']}>User Experience (UX) Goal:</span> Reducing Cognitive Load
-                        </h3>
                         <p className={styles['block-text']}>
-                            My primary UX goal was to make self-care feel effortless and rewarding, not like another chore.
+                            Our goal was to simplify the start. I turned a difficult habit into something that takes almost no effort.
                         </p>
                         <ul className={styles['content-list']}>
                             <li>
@@ -97,34 +111,32 @@ export default function BloomPage() {
                         </ul>
                     </div>
 
+                    <h2 className={styles['section-heading']}>UI Design Strategy</h2>
+
                     <div className={styles['text-block']}>
-                        <h3 className={styles['block-title']}>
-                            <span className={styles['title-underline']}>User Interface (UI) Goal:</span> Warmth & Positivity
-                        </h3>
                         <p className={styles['block-text']}>
-                            The interface is designed to feel like a warm embrace—supportive, bright, and optimistic.
+                            The UI strategy was to create a "A quiet, safe space on your phone". Every visual element was chosen to reduce stress.
                         </p>
                         <ul className={styles['content-list']}>
                             <li>
-                                <span className={styles['list-label']}>Color Palette:</span> I utilized a warm yellow primary color (#FFB700) to evoke happiness, energy, and optimism, avoiding the clinical blues often found in medical apps.
+                                <span className={styles['list-label']}>Soft Minimalism:</span> We used large border radius (rounded corners) and generous white space.
                             </li>
                             <li>
-                                <span className={styles['list-label']}>Typography:</span> Rounded, friendly typography reinforces the approachable and non-judgmental nature of the application.
+                                <span className={styles['list-label']}>Tactile Feedback:</span> I designed the UI to feel "physical".
                             </li>
                         </ul>
                     </div>
+
                 </div>
             </section>
 
             {/* Customer Journey Map */}
-            <section className={styles['text-section']}>
+            <section className={styles.section}>
                 <div className="container">
                     <h2 className={styles['section-heading']}>Customer Journey Map</h2>
 
-                    <h3 className={styles['block-title']}><span className={styles['title-underline']}>The Bloom User Experience.</span></h3>
-
                     <p className={styles['block-text']}>
-                        Scenario: Sarah (27, Marketing Manager) feels overwhelmed by work stress and wants a quick way to track her mood and reflect on her day without adding to her mental load.
+                        Scenario: <strong>Sarah (27, Marketing Manager) feels overwhelmed by work stress and wants a quick way to track her mood and reflect on her day without adding to her mental load.</strong>
                     </p>
 
                     <div className={styles['centered-image']}>
@@ -139,231 +151,125 @@ export default function BloomPage() {
                 </div>
             </section>
 
-            {/* Colors Section */}
-            <section className={styles['text-section']}>
+            {/* Component analitics */}
+            <section className={styles.section}>
                 <div className="container">
-                    <h2 className={styles['section-heading']}>Colors</h2>
+                    <h2 className={styles['section-heading']}>Competitors Analysis</h2>
 
-                    <p className={styles['block-text']}>
-                        Color psychology plays a crucial role in Bloom. The palette is intentionally warm and uplifting to counteract feelings of stress or anxiety.
-                    </p>
-
-                    <p className={styles['block-text']}>
-                        I chose a vibrant yellow as the foundation—symbolizing hope and clarity—supported by calming neutrals.
-                    </p>
-
-                    {/* Color 1 */}
-                    <div className={styles['color-item']}>
-                        <div className={styles['color-swatch-row']}>
-                            <div className={styles['color-octagon']} style={{ backgroundColor: '#FFB700' }} />
-                            <span className={styles['color-hex']}>#FFB700</span>
-                        </div>
+                    <div className={styles['text-block']}>
                         <p className={styles['block-text']}>
-                            <span className={styles.highlight}>Role:</span> Primary Brand Color
+                            UX Research Insights
                         </p>
-                        <p className={styles['block-text']}>
-                            <span className={styles.highlight}>Why:</span> This warm yellow is energetic and optimistic. It draws attention to key actions and creates a positive emotional association with the app.
-                        </p>
-                    </div>
-
-                    {/* Color 2 */}
-                    <div className={styles['color-item']}>
-                        <div className={styles['color-swatch-row']}>
-                            <div className={styles['color-octagon']} style={{ backgroundColor: '#FFF8E1' }} />
-                            <span className={styles['color-hex']}>#FFF8E1</span>
-                        </div>
-                        <p className={styles['block-text']}>
-                            <span className={styles.highlight}>Role:</span> Backgrounds & Accents
-                        </p>
-                        <p className={styles['block-text']}>
-                            <span className={styles.highlight}>Why:</span> A very soft yellow tint that provides warmth without eye strain, serving as a comfortable background for long reading or journaling sessions.
-                        </p>
-                    </div>
-
-                    {/* Color 3 - Dual colors */}
-                    <div className={styles['color-item']}>
-                        <div className={styles['color-swatch-row']}>
-                            <div className={`${styles['color-octagon']} ${styles['color-octagon-first']}`} style={{ backgroundColor: '#FFF8E1' }} />
-                            <div className={`${styles['color-octagon']} ${styles['color-octagon-second']}`} style={{ backgroundColor: '#FFFFFF' }} />
-                            <span className={styles['color-hex']}>#FFF8E1</span>
-                            <span className={styles['color-hex']}>#FFFFFF</span>
-                        </div>
-                        <p className={styles['block-text']}>
-                            <span className={styles.highlight}>Role:</span> Cards & Surfaces
-                        </p>
-                        <p className={styles['block-text']}>
-                            <span className={styles.highlight}>Why:</span> Layering white cards on soft yellow backgrounds creates depth and hierarchy, keeping the interface clean and organized while maintaining the warm brand personality.
-                        </p>
-                    </div>
-
-                    <div className={styles['color-row']}>
-                        <div className={styles['color-octagon-wraper']}>
-                            <div className={styles['color-octagon']} style={{ backgroundColor: '#1A1A1A' }} />
-                        </div>
-                        <div className={styles['color-octagon-wraper']}>
-                            <div className={styles['color-octagon']} style={{ backgroundColor: '#FFB700' }} />
-                        </div>
-                        <div className={styles['color-octagon-wraper']}>
-                            <div className={styles['color-octagon']} style={{ backgroundColor: '#FFD54F' }} />
-                        </div>
-                        <div className={styles['color-octagon-wraper']}>
-                            <div className={styles['color-octagon']} style={{ backgroundColor: '#FFF8E1' }} />
-                        </div>
-                        <div className={styles['color-octagon-wraper']}>
-                            <div className={styles['color-octagon']} style={{ backgroundColor: '#8D6E63' }} />
-                        </div>
-                        <div className={styles['color-octagon-wraper']}>
-                            <div className={styles['color-octagon']} style={{ backgroundColor: '#D7CCC8' }} />
-                        </div>
-                        <div className={styles['color-octagon-wraper']}>
-                            <div className={styles['color-octagon']} style={{ backgroundColor: '#EFEBE9' }} />
-                        </div>
+                        <ul className={styles['content-list']}>
+                            <li>
+                                <span className={styles['list-label']}>Making Habits Easy:</span> Most people quit mood tracking because it feels like a chore. Bloom was designed to be finished in under 15 seconds so it’s easy to do every day without feeling like work;
+                            </li>
+                            <li>
+                                <span className={styles['list-label']}>A Friend, Not a Tool:</span> Many health apps feel cold, like a doctor's office. We used a 3D character that reacts to your mood to make the app feel like a supportive friend, which keeps users coming back;
+                            </li>
+                            <li>
+                                <span className={styles['list-label']}>Freedom of actions:</span> You are rarely just "happy" or "sad." Our sliders let you log mixed emotions – like feeling joyful but stressed at the same time – because that’s how real life actually works.
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </section>
 
-            {/* Typography Section */}
-            <section className={styles['text-section']}>
+            {/* Colors Section */}
+            <section className={styles.section}>
                 <div className="container">
-                    <h2 className={styles['section-heading']}>Typography</h2>
+                    <h2 className={styles['section-heading']}>Colors</h2>
 
                     <p className={styles['block-text']}>
-                        Typography in Bloom is designed to be readable and approachable. We avoid harsh, overly geometric fonts in favor of those with softer curves.
+                        I chose these colors to create a warm, grounding atmosphere that feels more like a cozy paper journal than a cold screen. The soft cream and deep blue provide a calm, low-stress backdrop, while the golden amber adds a touch of optimism and focus.
+                    </p>
+
+                    <div className={`${styles['centered-image']} ${styles['colors-images-container']}`}>
+                        <Image
+                            src={`${basePath}/bloom/1000010063.png`}
+                            alt="Customer Journey Map"
+                            width={1200}
+                            height={600}
+                            className={styles['screen-preview']}
+                        />
+                    </div>
+
+
+
+                </div>
+            </section>
+
+            {/* Typography Section */}
+            <section className={styles.section}>
+                <div className="container">
+                    <h2 className={styles['section-heading']}>Font</h2>
+
+                    <p className={styles['block-text']}>
+                        I chose Satoshi because its clean, modern design makes the text very easy to read and keeps the interface looking organized. Its balanced style feels professional yet friendly, perfectly matching the app's calm and simple vibe.
                     </p>
 
                     <p className={styles['block-text']}>
-                        <span className={styles.highlight}>Typeface:</span> Plus Jakarta Sans<br />
-                        <span className={styles.highlight}>Category:</span> Geometric Sans-Serif (Rounded feel)
+                        <span className={styles.highlight}>Typeface:</span> Satoshi<br />
+                        <span className={styles.highlight}>Category:</span> sans
                     </p>
                 </div>
             </section>
 
             {/* Screens Section */}
-            <section className={styles['text-section']}>
+            <section className={styles.section}>
                 <div className="container">
-                    <h2 className={styles['section-heading']}>Screens</h2>
+                    <h2 className={styles['section-heading']}>Screens & Flows</h2>
+                    <h3 className={styles['block-title']}>Splash, Sign Up & Onboarding</h3>
 
-                    <h3 className={styles['section-subtitle']}>Daily Check-in & Mood Tracking</h3>
 
-                    <ul className={styles['content-list']}>
-                        <li>
-                            <span className={styles['list-label']}>Rapid entry:</span> Users can log their mood in seconds using the "Muud" slider, lowering the barrier to entry for daily tracking.
-                        </li>
-                        <li>
-                            <span className={styles['list-label']}>Visual Feedback:</span> The background color and animated characters adapt to the selected mood, providing immediate and empathetic visual feedback.
-                        </li>
-                    </ul>
+                    <p className={styles['block-text']}>
+                        The Bloom onboarding flow utilizes a frictionless strategy, prioritizing social authentication to minimize the initial effort required from users. By implementing progressive disclosure, the registration process is divided into three manageable micro-steps to prevent users from feeling overwhelmed.
+                    </p>
 
-                    <div className={styles['centered-image']}>
+                    <div className={styles['screens-images-container']}>
                         <Image
-                            src={`${basePath}/bloom/muud.jpg`}
+                            src={`${basePath}/bloom/flows-1.jpg`}
                             alt="Mood Tracking Screen"
                             width={805}
                             height={500}
                             className={styles['screen-preview']}
                         />
-                    </div>
-
-                    <h3 className={styles['section-subtitle']}>Journaling & Reflection</h3>
-
-                    <ul className={styles['content-list']}>
-                        <li>
-                            <span className={styles['list-label']}>Structured Prompts:</span> To prevent "blank page syndrome," Bloom offers guided questions for reflection.
-                        </li>
-                        <li>
-                            <span className={styles['list-label']}>History View:</span> Users can scroll through their past entries to see their personal growth journey over time.
-                        </li>
-                    </ul>
-
-                    <div className={styles['centered-image']}>
-                        <Image
-                            src={`${basePath}/bloom/journal-history.jpg`}
-                            alt="Journal History Screen"
-                            width={805}
-                            height={500}
-                            className={styles['screen-preview']}
-                        />
-                    </div>
-
-                    <h3 className={styles['section-subtitle']}>Personalized Insights</h3>
-
-                    <ul className={styles['content-list']}>
-                        <li>
-                            <span className={styles['list-label']}>Data Visualization:</span> Weekly and monthly charts show mood trends, helping users correlate their feelings with events or habits.
-                        </li>
-                        <li>
-                            <span className={styles['list-label']}>Actionable Advice:</span> Based on the tracked data, the app suggests relevant articles or exercises to improve wellbeing.
-                        </li>
-                    </ul>
-
-                    <div className={styles['centered-image']}>
-                        <Image
-                            src={`${basePath}/bloom/insights.jpg`}
-                            alt="Insights Screen"
-                            width={805}
-                            height={500}
-                            className={styles['screen-preview']}
-                        />
-                    </div>
-
-                    <h3 className={styles['section-subtitle']}>User Profile</h3>
-
-                    <ul className={styles['content-list']}>
-                        <li>
-                            <span className={styles['list-label']}>Achievements:</span> Streaks and badges reward consistency, gamifying the self-care process.
-                        </li>
-                        <li>
-                            <span className={styles['list-label']}>Customization:</span> Users can personalize their app experience, themes, and notification preferences.
-                        </li>
-                    </ul>
-
-                    <div className={styles['centered-image']}>
-                        <Image
-                            src={`${basePath}/bloom/profile.jpg`}
-                            alt="Profile Screen"
-                            width={805}
-                            height={500}
-                            className={styles['screen-preview']}
-                        />
-                    </div>
-
-                    {/* Flows */}
-                    <h3 className={styles['section-subtitle']}>User Flows</h3>
-                    <p className={styles['block-text']}>
-                        Visualizing the path users take to complete key tasks ensures a logical and intuitive navigation experience.
-                    </p>
-
-                    <div className={styles['centered-image']}>
-                        <Image
-                            src={`${basePath}/bloom/flows-1.jpg`}
-                            alt="User Flows 1"
-                            width={805}
-                            height={500}
-                            className={styles['screen-preview']}
-                        />
-                    </div>
-                    <div className={styles['centered-image']}>
                         <Image
                             src={`${basePath}/bloom/flows-2.jpg`}
-                            alt="User Flows 2"
+                            alt="Mood Tracking Screen"
                             width={805}
                             height={500}
                             className={styles['screen-preview']}
                         />
-                    </div>
-                    <div className={styles['centered-image']}>
                         <Image
                             src={`${basePath}/bloom/flows-3.jpg`}
-                            alt="User Flows 3"
+                            alt="Flow 3"
                             width={805}
                             height={500}
                             className={styles['screen-preview']}
                         />
                     </div>
 
+                    <div className={styles['screen-container']}>
+                        <div className={styles['screen-description']}></div>
+                        <div className={styles['screen-image']}>
+                            <Image
+                                src={`${basePath}/bloom/muud.jpg`}
+                                alt="Mood Tracking Screen"
+                                width={805}
+                                height={500}
+                                className={styles['screen-preview']}
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="container">
+                    <div className={styles['screens-mood-tracking']}>
+                        <h3 className={styles['block-title']}>Mood Tracking Flow</h3>
+                    </div>
                 </div>
             </section>
-
         </main>
     );
 }
