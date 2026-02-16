@@ -6,7 +6,7 @@ interface BackButtonProps {
     label?: string;
 }
 
-export function BackButton({ href = '/', label = 'Back to Home' }: BackButtonProps) {
+export function BackButton({ href = '/', label = '' }: BackButtonProps) {
     return (
         <Link href={href} className={styles['back-button']}>
             <svg
@@ -25,7 +25,7 @@ export function BackButton({ href = '/', label = 'Back to Home' }: BackButtonPro
                     strokeLinejoin="round"
                 />
             </svg>
-            <span>{label}</span>
+            {/* <span>{label}</span> */}
         </Link>
     );
 }
