@@ -118,7 +118,7 @@
 
     p {
         font-family: var(--font-sans);
-        font-size: 16px;
+        font-size: 18px;
         font-weight: 400;
         line-height: 1.7;
         color: var(--text);
@@ -137,7 +137,7 @@
 
     li {
         font-family: var(--font-sans);
-        font-size: 16px;
+        font-size: 18px;
         line-height: 1.7;
         color: var(--text);
         margin-bottom: var(--space-xs);
@@ -624,11 +624,51 @@
     }
 }
 
+.screen-container {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-4xl);
+    margin-bottom: 60px;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: var(--space-2xl);
+    }
+}
+
+.screens-mood-tracking,
+.screen-container {
+    .block-text {
+        margin-bottom: var(--space-lg);
+    }
+}
+
+.screens-mood-tracking-image {
+    margin-top: 40px;
+}
+
+.screen-description {
+    max-width: 620px;
+}
+
+.screen-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: var(--space-lg);
+}
+
+.screen-image {
+    max-width: 245px;
+
+    @media (max-width: 768px) {
+        max-width: initial;
+        width: 100%;
+    }
+}
+
 .screen-preview {
     width: 100%;
     height: auto;
-    border-radius: var(--radius-md);
-    border: 1px solid #EBEBEB;
 }
 
 /* Testimonial Section */

@@ -79,7 +79,7 @@ export default function BloomPage() {
                             <span className={styles['card-title']}>The Solution</span>
                         </div>
                         <div className={styles['card-content']}>
-                            <p>
+                            <p className={styles['block-text']}>
                                 Bloom is a comprehensive mobile companion for mental wellness. It solves the problem of disconnected self-care methods by centralizing:
                             </p>
                             <ul className={styles['solution-list']}>
@@ -250,23 +250,159 @@ export default function BloomPage() {
                         />
                     </div>
 
+                    {/* Mood Dashboard 1 */}
                     <div className={styles['screen-container']}>
-                        <div className={styles['screen-description']}></div>
+                        <div className={styles['screen-description']}>
+                            <div className={styles['screen-title']}>Mood</div>
+                            <p className={styles['block-text']}>
+                                The Mood Dashboard serves as a "Calm Hub" designed for immediate emotional clarity and low-friction engagement.
+                            </p>
+
+                            <ul className={styles['content-list']}>
+                                <li>
+                                    <span className={styles['list-label']}>Glanceable Data:</span> The central Mood Balance Ring provides an instant "Bright" vs. "Challenging" day ratio, offering high-level insights without complex analysis.
+                                </li>
+                                <li>
+                                    <span className={styles['list-label']}>Behavioral Correlation:</span> By visualizing Month Activities as varied bubbles, the UX naturally nudges users to link their habits—like walking or diet- to their emotional trends.
+                                </li>
+                                <li>
+                                    <span className={styles['list-label']}>Reduced Self-Judgment:</span> The use of empathetic language like "Challenging Days" instead of "Bad" creates a supportive environment that encourages honest tracking.
+                                </li>
+                            </ul>
+                        </div>
                         <div className={styles['screen-image']}>
                             <Image
                                 src={`${basePath}/bloom/muud.jpg`}
                                 alt="Mood Tracking Screen"
-                                width={805}
-                                height={500}
+                                width={245}
+                                height={530}
                                 className={styles['screen-preview']}
                             />
                         </div>
                     </div>
+
+                    {/* 2 */}
+                    <div className={styles['screen-container']}>
+                        <div className={styles['screen-description']}>
+                            <div className={styles['screen-title']}>Journal History</div>
+                            <p className={styles['block-text']}>
+                                The History screen is a simple place to look back on past entries. It’s designed to help users quickly find specific days and easily see how their mood has changed over time.
+                            </p>
+
+                            <ul className={styles['content-list']}>
+                                <li>
+                                    <span className={styles['list-label']}>Search Functionality:</span> A prominent, clean search bar at the top allows users to find specific memories or triggers instantly by keyword.
+                                </li>
+                                <li>
+                                    <span className={styles['list-label']}>Mood-Based Filtering:</span> Users can filter their entire history by specific emotional states.
+                                </li>
+                                <li>
+                                    <span className={styles['list-label']}>UX Goal:</span> This allows users to quickly find "Bright Days" for a mood boost or analyze "Challenging Days" to identify recurring negative patterns.
+                                </li>
+                                <li>
+                                    <span className={styles['list-label']}>Visual Hierarchy:</span> Every entry is a clean card that summarizes your day.
+                                </li>
+                                <li>
+                                    <span className={styles['list-label']}>Immediate Context:</span> You can see your mood, date, and notes all at once without clicking.
+                                </li>
+                            </ul>
+                        </div>
+                        <div className={styles['screen-image']}>
+                            <Image
+                                src={`${basePath}/bloom/journal-history.jpg`}
+                                alt="Journal History"
+                                width={245}
+                                height={530}
+                                className={styles['screen-preview']}
+                            />
+                        </div>
+                    </div>
+
+                    {/* 3 */}
+                    <div className={styles['screen-container']}>
+                        <div className={styles['screen-description']}>
+                            <div className={styles['screen-title']}>Insights</div>
+                            <p className={styles['block-text']}>
+                                The Insights screen represents the "intelligence layer" of the Bloom app. The UX focus is on actionable data—transforming raw behavioral tracking into meaningful, easy-to-digest advice that helps users close the loop between reflection and improvement.
+                            </p>
+
+                            <ul className={styles['content-list']}>
+                                <li>
+                                    <span className={styles['list-label']}>Gamify Education:</span> Using progress bars and "completed" states.
+                                </li>
+                                <li>
+                                    <span className={styles['list-label']}>Support the User:</span> Providing value beyond just "tracking" by giving them the tools to improve.
+                                </li>
+                                <li>
+                                    <span className={styles['list-label']}>The Learning Library:</span> This section introduces educational content tailored to the user’s current emotional state.
+                                </li>
+                            </ul>
+                        </div>
+                        <div className={styles['screen-image']}>
+                            <Image
+                                src={`${basePath}/bloom/insights.jpg`}
+                                alt="Insights"
+                                width={245}
+                                height={530}
+                                className={styles['screen-preview']}
+                            />
+                        </div>
+                    </div>
+
+                    {/* 4 */}
+                    <div className={styles['screen-container']}>
+                        <div className={styles['screen-description']}>
+                            <div className={styles['screen-title']}>Profile</div>
+                            <p className={styles['block-text']}>
+                                The Profile tab shows general user info and achievement badges. Users can see both their earned badges and the ones they haven't unlocked yet, which motivates them to keep tracking their mood.
+                            </p>
+                        </div>
+                        <div className={styles['screen-image']}>
+                            <Image
+                                src={`${basePath}/bloom/profile.jpg`}
+                                alt="Profile"
+                                width={245}
+                                height={530}
+                                className={styles['screen-preview']}
+                            />
+                        </div>
+                    </div>
+
                 </div>
 
                 <div className="container">
                     <div className={styles['screens-mood-tracking']}>
-                        <h3 className={styles['block-title']}>Mood Tracking Flow</h3>
+                        <div className={styles['screen-title']}>Mood Tracking Flow</div>
+                        <p className={styles['block-text']}>
+                            The Mood Tracking flow is designed to be the "heartbeat" of the Bloom app. The UX strategy focuses on emotional granularity and tactile engagement, moving away from simple "happy/sad" buttons to a more nuanced, multi-dimensional reflection.
+                        </p>
+                        <ul className={styles['content-list']}>
+                            <li>
+                                <span className={styles['list-label']}>Visualizing Complex Emotions:</span> Unlike traditional trackers that force a single mood choice, this interface uses multiple sliders for "Joyful," "Stressed," and "Sad."
+                            </li>
+                            <li>
+                                <span className={styles['list-label']}>Dynamic Visual Feedback:</span> A large, 3D character in the center reacts in real-time to the slider positions.
+                            </li>
+                            <li>
+                                <span className={styles['list-label']}>Frictionless Contextual Identification:</span> The "Choose what influenced your mood" screen uses a grid of large, tappable icons to identify external triggers without requiring manual typing.
+                            </li>
+                            <li>
+                                <span className={styles['list-label']}>Visual Shorthand:</span> Using recognizable icons (Coffee, Sport, Conflicts) reduces the cognitive load on the user, allowing them to complete the context-setting phase in seconds.
+                            </li>
+                            <li>
+                                <span className={styles['list-label']}>Progressive Disclosure:</span> The final step - adding a note - is presented only after the user has already engaged with the simpler, more visual steps.
+                            </li>
+                        </ul>
+
+                        <div className={styles['screens-mood-tracking-image']}>
+                            <Image
+                                src={`${basePath}/bloom/mood-tracking-flow.jpg`}
+                                alt="Mood Tracking Flow"
+                                width={1168}
+                                height={554}
+                                className={styles['screen-preview']}
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
