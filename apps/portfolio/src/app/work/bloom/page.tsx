@@ -406,6 +406,18 @@ export default function BloomPage() {
                     </div>
                 </div>
             </section>
+
+            <section className={`${styles.section} ${styles['bye-section']}`}>
+                <div className="container">
+                    <Image
+                        src={`${basePath}/bloom/bye-bye.png`}
+                        alt="Bye Image"
+                        width={622}
+                        height={548}
+                        className={styles['bye-image']}
+                    />
+                </div>
+            </section>
         </main>
     );
 }

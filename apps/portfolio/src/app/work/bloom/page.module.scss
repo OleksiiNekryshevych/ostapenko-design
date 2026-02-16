@@ -1,12 +1,8 @@
 /* Bloom Case Study Styles */
 
-.project-page {
-    padding-bottom: var(--space-5xl);
-}
-
 /* Header */
 .project-header {
-    padding: 50px 0;
+    padding: 0 0 50px;
 
     @media (max-width: 768px) {
         padding: var(--space-lg) 0;
@@ -788,4 +784,15 @@
     .testimonial-text {
         font-size: 20px;
     }
+}
+
+.bye-section {
+    padding-top: 20px;
+}
+
+.bye-image {
+    width: 100%;
+    height: auto;
+    max-width: 622px;
+    margin: 0 auto;
 }
