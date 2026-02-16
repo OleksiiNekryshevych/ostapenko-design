@@ -172,6 +172,79 @@ export default function BloomPage() {
                             </li>
                         </ul>
                     </div>
+
+                    <h3 className={styles['block-title']}>Competitors</h3>
+                    {/* table start*/}
+                    <div className={styles['comparison-table']}>
+                        {/* Desktop header */}
+                        <div className={styles['table-header']}>
+                            <div className={styles['table-cell']}>Name</div>
+                            <div className={styles['table-cell']}>Strength</div>
+                            <div className={styles['table-cell']}>The Weakness</div>
+                            <div className={styles['table-cell']}>The Bloom Opportunity</div>
+                        </div>
+
+                        {/* Row 1 */}
+                        <div className={styles['table-row']}>
+                            <div className={styles['table-cell']}>
+                                <span className={styles['cell-label']}>Name</span>
+                                <span className={styles['cell-name']}>Daylio</span>
+                            </div>
+                            <div className={styles['table-cell']}>
+                                <span className={styles['cell-label']}>Strength</span>
+                                <span>Fast, icon-based logging that minimizes typing.</span>
+                            </div>
+                            <div className={styles['table-cell']}>
+                                <span className={styles['cell-label']}>Weakness</span>
+                                <span><span className={styles['weakness-highlight']}>Data Fatigue Gap:</span> Users accumulate years of data but lack the tools to actually change habits.</span>
+                            </div>
+                            <div className={styles['table-cell']}>
+                                <span className={styles['cell-label']}>Opportunity</span>
+                                <span>Move from passive tracking to Actionable Insights that provide direct recommendations.</span>
+                            </div>
+                        </div>
+
+                        {/* Row 2 */}
+                        <div className={styles['table-row']}>
+                            <div className={styles['table-cell']}>
+                                <span className={styles['cell-label']}>Name</span>
+                                <span className={styles['cell-name']}>How We Feel</span>
+                            </div>
+                            <div className={styles['table-cell']}>
+                                <span className={styles['cell-label']}>Strength</span>
+                                <span>High emotional granularity using the Geneva Emotion Wheel.</span>
+                            </div>
+                            <div className={styles['table-cell']}>
+                                <span className={styles['cell-label']}>Weakness</span>
+                                <span>Selecting from 100+ emotions when stressed can be overwhelming for the user.</span>
+                            </div>
+                            <div className={styles['table-cell']}>
+                                <span className={styles['cell-label']}>Opportunity</span>
+                                <span>Simplify selection with a 3-Slider System to capture complex &quot;Mixed Emotions&quot; without the stress of labeling.</span>
+                            </div>
+                        </div>
+
+                        {/* Row 3 */}
+                        <div className={styles['table-row']}>
+                            <div className={styles['table-cell']}>
+                                <span className={styles['cell-label']}>Name</span>
+                                <span className={styles['cell-name']}>Moodfit</span>
+                            </div>
+                            <div className={styles['table-cell']}>
+                                <span className={styles['cell-label']}>Strength</span>
+                                <span>Clinical, science-based approach utilizing CBT tools.</span>
+                            </div>
+                            <div className={styles['table-cell']}>
+                                <span className={styles['cell-label']}>Weakness</span>
+                                <span>The UI feels like a medical form, lacking the warmth needed for a daily habit.</span>
+                            </div>
+                            <div className={styles['table-cell']}>
+                                <span className={styles['cell-label']}>Opportunity</span>
+                                <span>Transform the app into a Digital Companion using a 3D mascot and soft, organic UI.</span>
+                            </div>
+                        </div>
+                    </div>
+                    {/* table end*/}
                 </div>
             </section>
 
