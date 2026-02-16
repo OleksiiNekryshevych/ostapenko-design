@@ -59,8 +59,8 @@ export default function BloomPage() {
                         </div>
                         <div className={styles['card-content']}>
                             <ul className={styles['solution-list']}>
-                                <li><strong>Lack of Context: </strong> Users see a "bad  mood" on a chart but don't understand the triggers behind it.</li>
-                                <li><strong>Clinical Feel:</strong> Cold, sterile interfaces can make users feel like "patients" rather than people seeking growth</li>
+                                <li><span className={styles['list-label']}>Lack of Context: </span> Users see a "bad  mood" on a chart but don't understand the triggers behind it.</li>
+                                <li><span className={styles['list-label']}>Clinical Feel: </span> Cold, sterile interfaces can make users feel like "patients" rather than people seeking growth</li>
                             </ul>
                         </div>
                     </div>
@@ -83,9 +83,9 @@ export default function BloomPage() {
                                 Bloom is a comprehensive mobile companion for mental wellness. It solves the problem of disconnected self-care methods by centralizing:
                             </p>
                             <ul className={styles['solution-list']}>
-                                <li><strong>Mood Tracking:</strong> Daily check-ins to monitor emotional states (Muud).</li>
-                                <li><strong>Journaling:</strong> Structured and free-form writing to process thoughts.</li>
-                                <li><strong>Insights:</strong> Data visualization to identify triggers and patterns over time.</li>
+                                <li><span className={styles['list-label']}>Mood Tracking: </span> Daily check-ins to monitor emotional states (Muud).</li>
+                                <li><span className={styles['list-label']}>Journaling: </span> Structured and free-form writing to process thoughts.</li>
+                                <li><span className={styles['list-label']}>Insights: </span> Data visualization to identify triggers and patterns over time.</li>
                             </ul>
                         </div>
                     </div>
