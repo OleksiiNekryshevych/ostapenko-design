@@ -21,21 +21,13 @@ export default function DostupnoPage() {
             <header className={styles['project-header']}>
                 <div className="container">
                     <div className={styles['header-content']}>
-                        {/* <div className={styles['logo-wrapper']}>
-                            <Image
-                                src={`${basePath}/dostupno/logo.png`}
-                                alt="Dostupno Logo"
-                                width={261}
-                                height={242}
-                                style={{ width: '100%', height: 'auto' }}
-                            />
-                        </div> */}
-                        <h1 className={styles['project-title']}>Dostupno.UA</h1>
-                    </div>
-                    <div className={styles['text-block']}>
-                        <p className={styles['block-text']}>
-                            {/* Project subtitle / description goes here */}
-                        </p>
+                        <Image
+                            src={`${basePath}/dostupno/logo_title.svg`}
+                            alt="Dostupno.UA"
+                            width={400}
+                            height={80}
+                            style={{ maxWidth: '305px', width: '100%', height: 'auto' }}
+                        />
                     </div>
                 </div>
             </header>
