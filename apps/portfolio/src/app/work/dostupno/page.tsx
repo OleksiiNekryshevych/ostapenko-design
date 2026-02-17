@@ -241,6 +241,19 @@ export default function DostupnoPage() {
                 </div>
             </section>
 
+            {/* Section: Coming Soon */}
+            <section className={styles['section-coming-soon']}>
+                <div className="container">
+                    <div className={styles['coming-soon-content']}>
+                        <span className={styles['coming-soon-icon']}>🎨</span>
+                        <h2 className={styles['coming-soon-title']}>Final Screens Coming Soon</h2>
+                        <p className={styles['coming-soon-text']}>
+                            The design implementation is currently in progress. Stay tuned for the final screens and interactive prototypes.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
         </main>
     );
 }
