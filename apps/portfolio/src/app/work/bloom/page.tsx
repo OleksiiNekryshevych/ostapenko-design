@@ -263,10 +263,59 @@ export default function BloomPage() {
                             alt="Customer Journey Map"
                             width={1200}
                             height={600}
-                            className={styles['screen-preview']}
+                            className={`${styles['screen-preview']} ${styles['color-palete-desktop']}`}
+                        />
+                        <Image
+                            src={`${basePath}/bloom/colors-mob.png`}
+                            alt="Customer Journey Map"
+                            width={1200}
+                            height={600}
+                            className={`${styles['screen-preview']} ${styles['color-palete-mobile']}`}
                         />
                     </div>
 
+                    <div className={styles['color-palete-lists']}>
+                        <ul>
+                            <li className={styles['color-palete-item']}>
+                                <span className={styles['color-palete-item-color']} style={{ backgroundColor: '#FFB700' }} />
+                                <span className={styles['color-palete-item-hex']}>#FFB700</span>
+                            </li>
+                            <li className={styles['color-palete-item']}>
+                                <span className={styles['color-palete-item-color']} style={{ backgroundColor: '#DDEBF1' }} />
+                                <span className={styles['color-palete-item-hex']}>#DDEBF1</span>
+                            </li>
+                            <li className={styles['color-palete-item']}>
+                                <span className={styles['color-palete-item-color']} style={{ backgroundColor: '#989898' }} />
+                                <span className={styles['color-palete-item-hex']}>#989898</span>
+                            </li>
+                            <li className={styles['color-palete-item']}>
+                                <span className={styles['color-palete-item-color']} style={{ backgroundColor: '#FFDD87' }} />
+                                <span className={styles['color-palete-item-hex']}>#FFDD87</span>
+                            </li>
+                            <li className={styles['color-palete-item']}>
+                                <span className={styles['color-palete-item-color']} style={{ backgroundColor: '#FFDD87' }} />
+                                <span className={styles['color-palete-item-hex']}>#FFDD87</span>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li className={styles['color-palete-item']}>
+                                <span className={styles['color-palete-item-color']} style={{ backgroundColor: '#363853' }} />
+                                <span className={styles['color-palete-item-hex']}>#363853</span>
+                            </li>
+                            <li className={styles['color-palete-item']}>
+                                <span className={styles['color-palete-item-color']} style={{ backgroundColor: '#D9D9D9' }} />
+                                <span className={styles['color-palete-item-hex']}>#D9D9D9</span>
+                            </li>
+                            <li className={styles['color-palete-item']}>
+                                <span className={styles['color-palete-item-color']} style={{ backgroundColor: '#F2FFF1' }} />
+                                <span className={styles['color-palete-item-hex']}>#F2FFF1</span>
+                            </li>
+                            <li className={styles['color-palete-item']}>
+                                <span className={styles['color-palete-item-color']} style={{ backgroundColor: '#F7F1FF' }} />
+                                <span className={styles['color-palete-item-hex']}>#F7F1FF</span>
+                            </li>
+                        </ul>
+                    </div>
 
 
                 </div>
