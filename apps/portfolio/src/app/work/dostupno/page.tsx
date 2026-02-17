@@ -88,56 +88,161 @@ export default function DostupnoPage() {
                 </div>
             </section>
 
-            {/* Section: Image */}
+            {/* Section: Technical Audit */}
             <section className={styles.section}>
                 <div className="container">
-                    <h2 className={styles['section-heading']}>Image Section</h2>
+                    <div className={styles['screen-container']}>
+                        <div className={styles['screen-description']}>
+                            <h3 className={styles['section-subtitle']}>Technical Audit: Current Performance Baseline</h3>
+                            <p className={styles['block-text']}>
+                                The website currently demonstrates strong technical health, scoring in the &quot;Green&quot; zone (90+) across all key web vitals:
+                            </p>
+                            <ul className={styles['content-list']}>
+                                <li>
+                                    <span className={styles['list-label']}>Accessibility (98/100):</span> From a code perspective, the site is well-structured with proper labels and high color contrast.
+                                </li>
+                                <li>
+                                    <span className={styles['list-label']}>Performance (94/100):</span> The site loads efficiently with a low Time to Interactive (TTI), meaning users aren&apos;t waiting long for the page to become functional.
+                                </li>
+                                <li>
+                                    <span className={styles['list-label']}>Best Practices (100/100):</span> The site follows modern web security and code health standards.
+                                </li>
+                                <li>
+                                    <span className={styles['list-label']}>SEO (92/100):</span> The platform is well-optimized for search engines to discover its content.
+                                </li>
+                            </ul>
+                        </div>
+                        <div className={styles['screen-image']}>
+                            <Image
+                                src={`${basePath}/dostupno/1.jpg`}
+                                alt="Technical Audit Performance Scores"
+                                width={500}
+                                height={400}
+                                className={styles['screen-preview']}
+                            />
+                        </div>
+                    </div>
 
-                    <div className={styles['centered-image']}>
-                        {/* <Image
-                            src={`${basePath}/dostupno/example.jpg`}
-                            alt="Description"
-                            width={1200}
-                            height={600}
-                            className={styles['screen-preview']}
-                        /> */}
+                    <p className={styles['block-text']}>
+                        My redesign bridges the gap between a technically &apos;perfect&apos; site and a functionally intuitive one. I am taking these strong technical foundations and applying UX improvements to solve the specific problems our users ran into.
+                    </p>
+                </div>
+            </section>
+
+            {/* Section: Problem & Solution Approach */}
+            <section className={styles.section}>
+                <div className="container">
+                    <h3 className={styles['section-subtitle']}>The &quot;Problem &amp; Solution&quot; Approach</h3>
+
+                    <div className={styles['screen-container']}>
+                        <div className={styles['screen-description']}>
+                            <p className={styles['block-text']}>
+                                Users who are motivated to support the movement for accessibility are often lost in a sea of unnecessary information, resulting in loosing the donation page.
+                            </p>
+                        </div>
+                        <div className={styles['screen-image']}>
+                            <Image
+                                src={`${basePath}/dostupno/2.jpg`}
+                                alt="Problem and Solution Approach"
+                                width={500}
+                                height={400}
+                                className={styles['screen-preview']}
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* Section: Comparison Table */}
+            {/* Section: Improvement Roadmap */}
             <section className={styles.section}>
                 <div className="container">
-                    <h2 className={styles['section-heading']}>Comparison</h2>
-
-                    <h3 className={styles['block-title']}>Competitors</h3>
+                    <h3 className={styles['section-subtitle']}>Improvement Roadmap for Dostupno.UA</h3>
 
                     <div className={styles['comparison-table']}>
                         {/* Desktop header */}
                         <div className={styles['table-header']}>
-                            <div className={styles['table-cell']}>Name</div>
-                            <div className={styles['table-cell']}>Strength</div>
-                            <div className={styles['table-cell']}>The Weakness</div>
-                            <div className={styles['table-cell']}>The Opportunity</div>
+                            <div className={styles['table-cell']}>Feature</div>
+                            <div className={styles['table-cell']}>Competitor Inspiration</div>
+                            <div className={styles['table-cell']}>Action for Dostupno.UA Redesign</div>
                         </div>
 
                         {/* Row 1 */}
                         <div className={styles['table-row']}>
                             <div className={styles['table-cell']}>
-                                <span className={styles['cell-label']}>Name</span>
-                                <span className={styles['cell-name']}>Competitor 1</span>
+                                <span className={styles['cell-label']}>Feature</span>
+                                <span className={styles['cell-name-highlight']}>Call to Action (CTA)</span>
                             </div>
                             <div className={styles['table-cell']}>
-                                <span className={styles['cell-label']}>Strength</span>
-                                <span>Strength description.</span>
+                                <span className={styles['cell-label']}>Competitor Inspiration</span>
+                                <span>DRK / Volunteering UKR</span>
                             </div>
                             <div className={styles['table-cell']}>
-                                <span className={styles['cell-label']}>Weakness</span>
-                                <span><span className={styles['weakness-highlight']}>Weakness label:</span> Weakness description.</span>
+                                <span className={styles['cell-label']}>Action</span>
+                                <span>Move &quot;Support&quot; (Donate) to a high-contrast button in the top right of the navigation bar. Make it &quot;Sticky&quot; so it stays visible during scroll.</span>
+                            </div>
+                        </div>
+
+                        {/* Row 2 */}
+                        <div className={styles['table-row']}>
+                            <div className={styles['table-cell']}>
+                                <span className={styles['cell-label']}>Feature</span>
+                                <span className={styles['cell-name-highlight']}>Content Strategy</span>
                             </div>
                             <div className={styles['table-cell']}>
-                                <span className={styles['cell-label']}>Opportunity</span>
-                                <span>Opportunity description.</span>
+                                <span className={styles['cell-label']}>Competitor Inspiration</span>
+                                <span>Platforma Volunteer</span>
+                            </div>
+                            <div className={styles['table-cell']}>
+                                <span className={styles['cell-label']}>Action</span>
+                                <span>Reduce home page text by 50%. Use Impact Metrics (e.g., &quot;150 Cities Audited&quot;) instead of long paragraphs to explain the organization&apos;s work.</span>
+                            </div>
+                        </div>
+
+                        {/* Row 3 */}
+                        <div className={styles['table-row']}>
+                            <div className={styles['table-cell']}>
+                                <span className={styles['cell-label']}>Feature</span>
+                                <span className={styles['cell-name-highlight']}>Trust Signals</span>
+                            </div>
+                            <div className={styles['table-cell']}>
+                                <span className={styles['cell-label']}>Competitor Inspiration</span>
+                                <span>Volunteering UKR</span>
+                            </div>
+                            <div className={styles['table-cell']}>
+                                <span className={styles['cell-label']}>Action</span>
+                                <span>Add a &quot;Where your money goes&quot; infographic or a transparency section directly on the homepage to reduce hesitation.</span>
+                            </div>
+                        </div>
+
+                        {/* Row 4 */}
+                        <div className={styles['table-row']}>
+                            <div className={styles['table-cell']}>
+                                <span className={styles['cell-label']}>Feature</span>
+                                <span className={styles['cell-name-highlight']}>Navigation</span>
+                            </div>
+                            <div className={styles['table-cell']}>
+                                <span className={styles['cell-label']}>Competitor Inspiration</span>
+                                <span>Platforma Volunteer</span>
+                            </div>
+                            <div className={styles['table-cell']}>
+                                <span className={styles['cell-label']}>Action</span>
+                                <span>Create a clear &quot;Start Here&quot; path. Instead of many equal menu items, use a visual hierarchy that guides the user to &quot;Find Accessible Places&quot; or &quot;Support Us.&quot;</span>
+                            </div>
+                        </div>
+
+                        {/* Row 5 */}
+                        <div className={styles['table-row']}>
+                            <div className={styles['table-cell']}>
+                                <span className={styles['cell-label']}>Feature</span>
+                                <span className={styles['cell-name-highlight']}>Visual Design</span>
+                            </div>
+                            <div className={styles['table-cell']}>
+                                <span className={styles['cell-label']}>Competitor Inspiration</span>
+                                <span>Volunteering UKR</span>
+                            </div>
+                            <div className={styles['table-cell']}>
+                                <span className={styles['cell-label']}>Action</span>
+                                <span>Replace generic/small photos with large, high-quality images of people to trigger empathy-driven giving.</span>
                             </div>
                         </div>
                     </div>

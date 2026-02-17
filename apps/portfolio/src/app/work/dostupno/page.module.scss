@@ -291,7 +291,7 @@
 
 .table-header {
     display: grid;
-    grid-template-columns: 120px 1fr 1fr 1fr;
+    grid-template-columns: 140px 1fr 2fr;
     gap: 32px;
     padding-bottom: 20px;
     border-bottom: 1px solid #E0E0E0;
@@ -310,7 +310,7 @@
 
 .table-row {
     display: grid;
-    grid-template-columns: 120px 1fr 1fr 1fr;
+    grid-template-columns: 140px 1fr 2fr;
     gap: 32px;
     padding: 28px 0;
     border-bottom: 1px solid #E0E0E0;
@@ -365,6 +365,11 @@
     font-weight: 700;
 }
 
+.cell-name-highlight {
+    font-weight: 700;
+    color: #4CAF50;
+}
+
 .weakness-highlight {
     color: #4CAF50;
     font-weight: 400;
@@ -386,8 +391,8 @@
 /* Screen containers */
 .screen-container {
     display: flex;
-    justify-content: space-between;
-    gap: var(--space-4xl);
+    align-items: center;
+    gap: 26px;
     margin-bottom: 60px;
 
     @media (max-width: 768px) {
@@ -398,7 +403,11 @@
 }
 
 .screen-description {
-    max-width: 620px;
+    width: 50%;
+
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 }
 
 .screen-title {
@@ -408,13 +417,14 @@
 }
 
 .screen-image {
-    max-width: 245px;
-    width: 100%;
+    width: 50%;
     height: auto;
     display: block;
+    padding-top: 12px;
 
     @media (max-width: 768px) {
-        max-width: 75%;
+        width: 75%;
+        padding-top: 0;
     }
 }
 
