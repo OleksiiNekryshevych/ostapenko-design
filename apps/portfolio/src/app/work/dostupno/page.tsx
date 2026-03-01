@@ -186,7 +186,7 @@ export default function DostupnoPage() {
                             </div>
                             <div className={styles['table-cell']}>
                                 <span className={styles['cell-label']}>Action</span>
-                                <span>Reduce home page text by 50%. Use Impact Metrics (e.g., &quot;150 Cities Audited&quot;) instead of long paragraphs to explain the organization&apos;s work.</span>
+                                <span>Update structure and update hierarchy; put the most important info at the beginning to give the user a clear understanding of what the organization does.</span>
                             </div>
                         </div>
 
@@ -241,18 +241,133 @@ export default function DostupnoPage() {
                 </div>
             </section>
 
-            {/* Section: Coming Soon */}
-            <section className={styles['section-coming-soon']}>
+            <section className={styles.section}>
                 <div className="container">
-                    <div className={styles['coming-soon-content']}>
-                        <span className={styles['coming-soon-icon']}>🎨</span>
-                        <h2 className={styles['coming-soon-title']}>Final Screens Coming Soon</h2>
-                        <p className={styles['coming-soon-text']}>
-                            The design implementation is currently in progress. Stay tuned for the final screens and interactive prototypes.
-                        </p>
+                    <h3 className={styles['section-subtitle']}>Home Page</h3>
+                    <div className={`${styles['screen-container']} ${styles['screen-container-top']}`}>
+                        <div className={styles['screen-description']}>
+                            <h4 className={styles['screen-title']}>UX Strategy & Optimization</h4>
+                            <ul className={styles['content-list']}>
+                                <li>
+                                    <span className={styles['list-label']}>Information Architecture Refactoring:</span> I restructured the complex content - into a clean, intuitive hierarchy. This ensures that users (veterans, business owners, and volunteers) can find relevant tools like the "Accessibility Bureau" .
+                                </li>
+                                <li>
+                                    <span className={styles['list-label']}>Conversion-Centric Support Flows:</span> Recognizing that financial sustainability is key, I redesigned the "Support Us" section into high-conversion cards. By introducing a "Quick Support", I reduced friction, allowing users to choose between one-time donations (Mono, Privat, PayPal, Portmone) and recurring Patreon memberships with minimal cognitive load.
+                                </li>
+                                <li>
+                                    <span className={styles['list-label']}>Accessibility-First Navigation:</span> Beyond standard WCAG compliance, I focused on "low-mobility UX." This included large tap targets, high-contrast readability, and a logical flow that mirrors the physical ease of navigation the organization advocates for in the real world.
+                                </li>
+                                <li>
+                                    <span className={styles['list-label']}>Engagement Loops:</span> I implemented a "Share Your Story" feature, creating a user-generated content loop that increases time-on-site and provides authentic social proof for potential volunteers and donors.
+                                </li>
+                            </ul>
+                        </div>
+                        <div className={styles['screen-image']}>
+                            <Image
+                                src={`${basePath}/dostupno/dostupno_home.jpg`}
+                                alt="Home page of dostupno.ua"
+                                width={519}
+                                height={1978}
+                                className={styles['screen-preview']}
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
+
+            <section className={styles.section}>
+                <div className="container">
+                    <h3 className={styles['section-subtitle']}>Support Us</h3>
+                    <div className={`${styles['screen-container']} ${styles['screen-container-top']}`}>
+                        <div className={styles['screen-description']}>
+                            <h4 className={styles['screen-title']}>UX Strategy & Optimization</h4>
+                            <ul className={styles['content-list']}>
+                                <li>
+                                    <span className={styles['list-label']}>Frictionless Transaction Design:</span> I replaced the traditional, overwhelming list of bank requisites with a "Quick-Tap" interface. By categorizing payment methods (Monobank, Portmone, PayPal, Privat24), I reduced the user's cognitive load and time-to-donation.
+                                </li>
+                                <li>
+                                    <span className={styles['list-label']}>Copy-to-Clipboard Integration:</span> To solve the pain point of manual data entry, I added interactive "copy" icons next to card numbers and emails, ensuring 100% accuracy for mobile-first users.
+                                </li>
+                                <li>
+                                    <span className={styles['list-label']}>Tiered Subscription Model (Patreon):</span> BI restructured the Patreon section into a tiered value proposition ("Panda's Friend" vs. "Become a Panda"). By visualizing these tiers with playful, relatable imagery, I shifted the user's perception from "giving money away" to "joining an exclusive community".
+                                </li>
+                            </ul>
+                        </div>
+                        <div className={styles['screen-image']}>
+                            <Image
+                                src={`${basePath}/dostupno/dostupno_payment.jpg`}
+                                alt="Payment page of dostupno.ua"
+                                width={519}
+                                height={1098}
+                                className={styles['screen-preview']}
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className={styles.section}>
+                <div className="container">
+                    <h3 className={styles['section-subtitle']}>Accessibility Bureau</h3>
+                    <div className={`${styles['screen-container']} ${styles['screen-container-top']}`}>
+                        <div className={styles['screen-description']}>
+                            <p className={styles['block-text']}>I structured the page to guide business owners through a logical funnel: identifying the problem, exploring specific solutions (Audits, Consultations, Training), and viewing proven success stories.</p>
+                        </div>
+                        <div className={styles['screen-image']}>
+                            <Image
+                                src={`${basePath}/dostupno/dostupno_accessibility.jpg`}
+                                alt="Accessibility Bureau page of dostupno.ua"
+                                width={519}
+                                height={1098}
+                                className={styles['screen-preview']}
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className={styles.section}>
+                <div className="container">
+                    <h3 className={styles['section-subtitle']}>Dostupno Blog</h3>
+                    <div className={`${styles['screen-container']} ${styles['screen-container-top']}`}>
+                        <div className={styles['screen-description']}>
+                            <p className={styles['block-text']}>I implemented a clean, flexible grid of content cards (design system components)  that maintains visual harmony despite varying image aspect ratios and headline lengths.</p>
+                        </div>
+                        <div className={styles['screen-image']}>
+                            <Image
+                                src={`${basePath}/dostupno/dostupno_blog.jpg`}
+                                alt="Dostupno Blog page of dostupno.ua"
+                                width={519}
+                                height={964}
+                                className={styles['screen-preview']}
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className={styles.section}>
+                <div className="container">
+                    <div className={styles['section-bottom-content']}>
+                        <Image
+                            src={`${basePath}/dostupno/logo.svg`}
+                            alt="Dostupno.UA"
+                            width={400}
+                            height={80}
+                            style={{ maxWidth: '116px', width: '100%', height: 'auto' }}
+                        />
+                        <div>
+                            <p className={styles['block-text']}>
+                                Developed entirely on a volunteer basis, this redesign brought together senior-level talent to donate their expertise for social good. As the Senior Product Designer, I led the UX/UI strategy to ensure the organization’s digital tools <br /> are accessible and intuitive.
+                            </p>
+                            <p className={styles['block-text']}>
+                                The design is currently being handed off to developers for a WordPress build, and an additional update for the Open Road <br /> project will follow shortly.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
 
         </main>
     );
