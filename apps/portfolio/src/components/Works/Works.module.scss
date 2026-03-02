@@ -4,8 +4,8 @@
 }
 
 .works-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: var(--space-lg);
     margin-top: 26px;
 
@@ -17,8 +17,7 @@
 .project-link {
     text-decoration: none;
     color: inherit;
-    display: flex;
-    flex-direction: column;
+    display: block;
     transition: transform 0.3s ease;
 
     &:hover {
@@ -27,26 +26,32 @@
 }
 
 .project-card {
-    padding: 0 !important;
+    padding: 16px;
     overflow: hidden;
     border: 1px solid #EBEBEB;
     box-shadow: none;
     background: white;
-    flex: 1;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
 }
 
 .card-image {
-    aspect-ratio: 4 / 3;
-    width: 100%;
+    width: 50%;
     overflow: hidden;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 16px;
-    padding-bottom: 0;
+    flex-shrink: 0;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+    }
 }
 
 .project-image {
@@ -56,15 +61,58 @@
 }
 
 .card-content {
-    padding: var(--space-md);
-    flex: 1;
+    width: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 16px 0;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        position: static;
+        display: block;
+        padding: var(--space-md) 0;
+    }
+}
+
+.card-title {
+    font-family: "Satoshi", var(--font-sans);
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0;
+    color: var(--text);
+    margin: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-align: center;
+
+    @media (max-width: 1024px) {
+        font-size: 36px;
+        line-height: 1.1;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 32px;
+        line-height: 1;
+        text-align: left;
+    }
 }
 
 .tags-list {
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+    right: 16px;
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-sm);
-    margin-top: var(--space-md);
+
+    @media (max-width: 768px) {
+        position: static;
+        margin-top: var(--space-md);
+    }
 }
 
 .tag {
@@ -75,10 +123,4 @@
     padding: var(--space-sm) var(--space-md);
     background-color: #EBEBEB;
     color: var(--text);
-}
-
-@media (max-width: 768px) {
-    .works-grid {
-        grid-template-columns: 1fr;
-    }
 }

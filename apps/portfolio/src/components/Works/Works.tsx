@@ -34,7 +34,7 @@ export function Works() {
     return (
         <Section id="works">
             <div className={`container ${styles.section}`}>
-                <h2 className="section-title">Latest work</h2>
+                <h2 className="section-title">Projects</h2>
                 <div className={styles['works-grid']}>
                     {projects.map((project, index) => (
                         <Link
@@ -54,7 +54,7 @@ export function Works() {
                                     />
                                 </div>
                                 <div className={styles['card-content']}>
-                                    <h3 className="card-title">{project.title}</h3>
+                                    <h3 className={styles['card-title']}>{project.title}</h3>
                                     <div className={styles['tags-list']}>
                                         {project.tags.map(tag => (
                                             <span key={tag} className={styles.tag}>{tag}</span>
