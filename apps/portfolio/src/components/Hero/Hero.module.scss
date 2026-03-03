@@ -4,82 +4,60 @@
 
 .hero-main {
     display: flex;
+    justify-content: space-between;
     align-items: stretch;
     gap: 50px;
-}
-
-.hero-visual {
-    flex-shrink: 0;
-}
-
-.profile-image {
-    display: block;
-    width: 420px;
-    height: auto;
-    object-fit: cover;
 }
 
 .hero-content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex: 1;
 }
 
-.hero-title {
-    font-family: "Satoshi", var(--font-sans);
-    font-size: 54px;
-    font-weight: 500;
-    line-height: 100%;
-    letter-spacing: 0;
-    color: var(--text);
-    margin: 0;
-    // padding-top: 16px;
-}
-
-.hero-title-accent {
-    font-family: "Ephesis", cursive;
-    font-size: 64px;
-    font-weight: 400;
-    line-height: 100%;
-    letter-spacing: 0;
-}
-
-.hero-bottom {
+.hero-ctas {
     display: flex;
-    gap: 16px;
-    justify-content: space-between;
-    align-items: flex-end;
-    flex-wrap: wrap;
-}
-
-.hero-role {
-    font-family: var(--font-sans);
-    font-size: 24px;
-    font-weight: 400;
-    color: var(--text);
-    white-space: nowrap;
+    gap: var(--space-md);
 }
 
 .hero-name {
     font-family: var(--font-sans);
-    font-size: 24px;
+    font-size: var(--text-3xl);
     font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0;
     color: var(--text);
-    white-space: nowrap;
+    margin-top: auto;
+}
+
+.hero-visual {
+    display: flex;
+    justify-content: flex-end;
+    flex-shrink: 0;
+}
+
+.image-wrapper {
+    position: relative;
+    padding: 54px;
+    background: linear-gradient(180deg, #ebebec 0%, #f6f6f6 100%);
+
+    img {
+        display: block;
+        width: 320px;
+        height: 320px;
+        object-fit: cover;
+    }
 }
 
 @media (max-width: 1024px) {
-    .profile-image {
-        width: 320px;
-    }
+    .image-wrapper {
+        padding: var(--space-xl);
 
-    .hero-title {
-        font-size: 40px;
-    }
-
-    .hero-title-accent {
-        font-size: 48px;
+        img {
+            width: 240px;
+            height: auto;
+        }
     }
 }
 
@@ -89,46 +67,45 @@
     }
 
     .hero-main {
-        flex-direction: column;
-        gap: 24px;
+        padding-bottom: 60px;
+        position: relative;
+    }
+
+    .hero-ctas {
+        position: absolute;
+        bottom: 0;
+        right: 50%;
+        transform: translateX(50%);
+        height: 44px;
+        width: 100%;
+        max-width: 358px;
+    }
+
+
+    .hero-main {
+        gap: 12px;
     }
 
     .hero-visual {
-        order: 4;
+        flex: 1;
+        min-width: 0;
     }
 
-    .hero-content {
-        gap: 8px;
+    .image-wrapper {
+        padding: 20px;
     }
 
-    .hero-title {
-        font-size: 32px;
-        padding-top: 0;
-        order: 1;
-    }
-
-    .hero-title-accent {
-        font-size: 38px;
-    }
-
-    .hero-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 4px;
-        order: 2;
-    }
-
-    .hero-role {
-        font-size: 16px;
-        order: 2;
+    .hero-content :global(.display-title) {
+        font-size: 18px;
+        font-weight: 400;
     }
 
     .hero-name {
         font-size: 16px;
-        order: 3;
+        font-weight: 400;
     }
 
-    .profile-image {
+    .hero-ctas .hero-btn {
         width: 100%;
     }
 }
