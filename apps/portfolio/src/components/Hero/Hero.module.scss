@@ -1,11 +1,16 @@
+/* ─── Hero Section (merged Hero + Stats + About) ─── */
+
 .hero-section {
-    margin-top: var(--space-xl);
+    padding-top: var(--space-xl);
 }
 
-.hero-main {
+/* ── Top: Image + Title ── */
+
+.hero-top {
     display: flex;
     align-items: stretch;
-    gap: 50px;
+    gap: 36px;
+    margin-bottom: 40px;
 }
 
 .hero-visual {
@@ -14,60 +19,127 @@
 
 .profile-image {
     display: block;
-    width: 420px;
+    width: 400px;
     height: auto;
     object-fit: cover;
 }
 
-.hero-content {
+.hero-intro {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex: 1;
 }
 
 .hero-title {
     font-family: "Satoshi", var(--font-sans);
-    font-size: 54px;
+    font-size: 44px;
     font-weight: 500;
     line-height: 100%;
     letter-spacing: 0;
     color: var(--text);
     margin: 0;
-    // padding-top: 16px;
-}
-
-.hero-title-accent {
-    font-family: "Ephesis", cursive;
-    font-size: 64px;
-    font-weight: 400;
-    line-height: 100%;
-    letter-spacing: 0;
-}
-
-.hero-bottom {
-    display: flex;
-    gap: 16px;
-    justify-content: space-between;
-    align-items: flex-end;
-    flex-wrap: wrap;
-}
-
-.hero-role {
-    font-family: var(--font-sans);
-    font-size: 24px;
-    font-weight: 400;
-    color: var(--text);
-    white-space: nowrap;
+    margin-bottom: 36px;
 }
 
 .hero-name {
     font-family: var(--font-sans);
-    font-size: 24px;
+    font-size: 36px;
     font-weight: 400;
     color: var(--text);
-    white-space: nowrap;
+    margin-top: var(--space-md);
 }
+
+/* ── Stats (inside right column) ── */
+
+.stats-grid {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-number {
+    font-family: var(--font-sans);
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--text);
+    margin-bottom: var(--space-xs);
+}
+
+.stat-label {
+    font-family: var(--font-sans);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text);
+}
+
+/* ── Bottom: About ── */
+
+.about-row {
+    display: flex;
+    gap: 36px;
+    align-items: stretch;
+}
+
+.about-text {
+    flex: 1;
+    border: 1px solid var(--border);
+    padding: 24px;
+
+    p {
+        font-size: var(--text-xl);
+        font-weight: 400;
+        line-height: 1.5;
+        color: var(--text);
+
+        &:not(:last-child) {
+            margin-bottom: var(--space-lg);
+        }
+    }
+}
+
+.about-cards {
+    flex: 0 0 480px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.about-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 24px;
+    border: 1px solid var(--border);
+    flex: 1;
+}
+
+.card-number {
+    font-family: "Satoshi", var(--font-sans);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    flex-shrink: 0;
+}
+
+.card-text {
+    font-family: var(--font-sans);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text);
+}
+
+/* ── Responsive ── */
 
 @media (max-width: 1024px) {
     .profile-image {
@@ -78,57 +150,61 @@
         font-size: 40px;
     }
 
-    .hero-title-accent {
-        font-size: 48px;
+    .about-cards {
+        flex: 1;
+        width: 100%;
     }
 }
 
 @media (max-width: 768px) {
     .hero-section {
-        margin-top: 12px;
+        padding-top: 12px;
     }
 
-    .hero-main {
+    .hero-top {
         flex-direction: column;
         gap: 24px;
     }
 
-    .hero-visual {
-        order: 4;
-    }
-
-    .hero-content {
-        gap: 8px;
+    .hero-intro {
+        gap: 4px;
     }
 
     .hero-title {
         font-size: 32px;
-        padding-top: 0;
-        order: 1;
-    }
-
-    .hero-title-accent {
-        font-size: 38px;
-    }
-
-    .hero-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 4px;
-        order: 2;
-    }
-
-    .hero-role {
-        font-size: 16px;
-        order: 2;
     }
 
     .hero-name {
         font-size: 16px;
-        order: 3;
     }
 
     .profile-image {
+        width: 100%;
+    }
+
+    .stats-grid {
+        flex-wrap: wrap;
+        gap: var(--space-md);
+    }
+
+    .stat-number {
+        font-size: 24px;
+    }
+
+    .stat-label {
+        font-size: 12px;
+    }
+
+    .about-row {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .about-text p {
+        font-size: 16px;
+    }
+
+    .about-cards {
         width: 100%;
     }
 }
