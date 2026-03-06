@@ -230,7 +230,8 @@ button {
    MAIN CONTENT
    ============================================ */
 main {
-    // padding-top: var(--space-xl);
+    // Pull content up behind sticky header so header starts over the dark Motto section
+    margin-top: calc(-1 * (48px + var(--space-lg) * 2 + 1px));
 }
 
 /* ============================================
