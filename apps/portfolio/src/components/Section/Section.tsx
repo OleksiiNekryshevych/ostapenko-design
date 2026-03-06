@@ -11,7 +11,7 @@ export function Section({ children, id, variant = 'default' }: SectionProps) {
     const className = variant === 'dark' ? styles.sectionDark : styles.section;
 
     return (
-        <section id={id} className={className}>
+        <section id={id} className={className} data-section-theme={variant === 'dark' ? 'dark' : undefined}>
             {children}
         </section>
     );

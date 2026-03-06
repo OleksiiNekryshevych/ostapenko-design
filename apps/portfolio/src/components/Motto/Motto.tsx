@@ -13,7 +13,7 @@ export function Motto() {
                         problems through design
                     </h2>
 
-                    <div className={styles['motto-bottom']}>
+                    <div className={styles['motto-bottom']} data-motto-nav>
                         <nav className={styles['motto-nav']}>
                             <a href="#about" className={styles['motto-nav-link']}>About</a>
                             <a href="#works" className={styles['motto-nav-link']}>Projects</a>
