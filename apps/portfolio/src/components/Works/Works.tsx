@@ -23,7 +23,7 @@ export function Works() {
             image: `${basePath}/project-2.jpg`
         },
         {
-            title: 'Dostupno.UA/OpenRoad',
+            title: 'Dostupno.UA/<br/>OpenRoad',
             slug: 'dostupno',
             tags: ['Inclusive', 'Charity', 'Web Application', 'UX Review'],
             accentColor: '#F0F9EC',
@@ -32,7 +32,7 @@ export function Works() {
     ];
 
     return (
-        <Section id="works">
+        <Section id="works" variant="dark">
             <div className={`container ${styles.section}`}>
                 <h2 className="section-title">Projects</h2>
                 <div className={styles['works-grid']}>
@@ -54,7 +54,7 @@ export function Works() {
                                     />
                                 </div>
                                 <div className={styles['card-content']}>
-                                    <h3 className={styles['card-title']}>{project.title}</h3>
+                                    <h3 className={styles['card-title']} dangerouslySetInnerHTML={{ __html: project.title }} />
                                     <div className={styles['tags-list']}>
                                         {project.tags.map(tag => (
                                             <span key={tag} className={styles.tag}>{tag}</span>

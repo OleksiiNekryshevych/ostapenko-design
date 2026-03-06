@@ -1,6 +1,66 @@
 .section {
     margin-bottom: 50px;
 
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+        margin-bottom: 36px;
+    }
+}
+
+.sectionDark {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 60px;
+    padding: 40px 0;
+
+    // Grain texture overlay using SVG feTurbulence
+    &::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.35;
+        mix-blend-mode: overlay;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        background-repeat: repeat;
+        background-size: 256px 256px;
+    }
+
+    // Ensure content sits above the grain overlay
+    >* {
+        position: relative;
+        z-index: 2;
+    }
+
+    // Override global text color classes inside dark sections
+    :global(.section-title),
+    :global(.card-title),
+    :global(.body-text),
+    :global(.subtitle-text),
+    :global(.display-title) {
+        color: var(--text-light);
+    }
+
+    // Invert button colors inside dark sections
+    button[class*="primary"],
+    a[class*="primary"] {
+        background-color: var(--text-light) !important;
+        color: var(--text) !important;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
     @media (max-width: 768px) {
         margin-bottom: 36px;
     }

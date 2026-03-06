@@ -4,11 +4,14 @@ import styles from './Section.module.scss';
 interface SectionProps {
     children: ReactNode;
     id?: string;
+    variant?: 'default' | 'dark';
 }
 
-export function Section({ children, id }: SectionProps) {
+export function Section({ children, id, variant = 'default' }: SectionProps) {
+    const className = variant === 'dark' ? styles.sectionDark : styles.section;
+
     return (
-        <section id={id} className={styles.section}>
+        <section id={id} className={className}>
             {children}
         </section>
     );

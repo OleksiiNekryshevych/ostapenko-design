@@ -125,7 +125,7 @@ export function Contact() {
         `${styles.label} ${fieldErrors[field] ? styles['label-error'] : ''}`;
 
     return (
-        <Section id="contact">
+        <Section id="contact" variant="dark">
             <div className={`container ${styles.section}`}>
                 <div className={styles['contact-header']}>
                     <h2 className="section-title">Let's work together</h2>
