@@ -34,7 +34,6 @@
     color: var(--text-light);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     clip-path: inset(0 0 100% 0);
-    /* Fully clipped by default */
     z-index: 1;
 }
 
@@ -57,39 +56,13 @@
     object-fit: contain;
 }
 
-/* Invert logo for dark layer */
 .logo-inverted {
     filter: invert(1);
 }
 
-/* ─── Navigation links (absorbed from Motto) ─── */
-
-.header-nav {
-    display: flex;
-    gap: var(--space-lg);
-    opacity: 0;
-    transform: translateY(10px);
-    pointer-events: none;
-    transition: opacity 0.35s ease, transform 0.35s ease;
-}
-
-.header-nav-visible {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-}
-
-.header-nav-link {
-    font-family: var(--font-sans);
-    font-size: var(--text-sm);
-    font-weight: 400;
-    color: inherit;
-    text-decoration: none;
-    transition: opacity var(--transition-base);
-
-    &:hover {
-        opacity: 0.7;
-    }
+/* Placeholder to keep header layout stable */
+.header-nav-placeholder {
+    flex: 1;
 }
 
 /* ─── Social nav ─── */
@@ -99,9 +72,60 @@
     align-items: center;
 }
 
-/* Invert social icons for dark layer */
 .social-inverted {
     filter: invert(1);
+}
+
+/* ─── Floating navigation (dual-layer) ─── */
+
+.floating-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    z-index: 101;
+    pointer-events: none;
+}
+
+.floating-nav-light,
+.floating-nav-dark {
+    pointer-events: none;
+}
+
+/* Dark nav layer — same clip-path as header dark overlay */
+.floating-nav-dark {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    clip-path: inset(0 0 100% 0);
+    /* Synced via JS */
+}
+
+/* Light links: dark text */
+.floating-nav-light .floating-nav-link {
+    color: var(--text);
+}
+
+/* Dark links: white text */
+.floating-nav-dark .floating-nav-link {
+    color: var(--text-light);
+}
+
+.floating-nav-link {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: 400;
+    text-decoration: none;
+    pointer-events: auto;
+    transition: opacity var(--transition-base);
+    white-space: nowrap;
+
+    &:hover {
+        opacity: 0.7;
+    }
 }
 
 /* ─── Responsive ─── */
@@ -113,17 +137,13 @@
         padding: var(--space-md) 0;
     }
 
-    .header-nav {
-        gap: var(--space-md);
-    }
-
-    .header-nav-link {
+    .floating-nav-link {
         font-size: var(--text-xs);
     }
 }
 
 @media (max-width: 480px) {
-    .header-nav {
+    .floating-nav {
         display: none;
     }
 }
