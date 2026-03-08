@@ -8,6 +8,7 @@
 }
 
 .contact-wrapper {
+    width: 100%;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -212,6 +213,13 @@
     font-size: var(--text-sm);
     font-weight: 500;
     line-height: 1.4;
+}
+
+.section {
+    min-height: calc(100vh - var(--header-height) - 150px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .snackbar-close {

@@ -33,6 +33,7 @@ export function Header() {
     const ANIM_DURATION = 1000;
 
     const [linksInHeader, setLinksInHeader] = useState(!isHomePage);
+    const [isMounted, setIsMounted] = useState(false);
 
     const updateHeader = useCallback(() => {
         const header = headerRef.current;
@@ -205,6 +206,7 @@ export function Header() {
 
     useEffect(() => {
         updateHeader();
+        setIsMounted(true);
 
         let ticking = false;
         const onScroll = () => {
@@ -295,7 +297,7 @@ export function Header() {
             </header>
 
             {/* Dual-layer floating nav links — light (base) + dark (clipped) */}
-            <div className={styles['floating-nav']}>
+            <div className={styles['floating-nav']} style={{ opacity: isMounted ? 1 : 0, transition: 'opacity 0.2s ease-in-out' }}>
                 {/* Light links (dark text) */}
                 <div className={styles['floating-nav-light']}>
                     {navLinks(lightLinksRef)}

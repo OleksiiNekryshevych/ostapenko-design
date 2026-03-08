@@ -13,21 +13,21 @@ export function Works() {
             slug: 'bloom',
             tags: ['B2C', 'Wellbeing', 'Mental Health', 'Mobile Application'],
             accentColor: '#FFB700',
-            image: `${basePath}/project-1.png`
+            image: `${basePath}/bloom-2.jpg`
         },
         {
             title: 'VirtuCare',
             slug: 'virtucare',
             tags: ['B2B', 'Telehealth', 'Healthcare', 'Web Application'],
             accentColor: undefined, // No accent color needed - image fills entire space
-            image: `${basePath}/project-2.jpg`
+            image: `${basePath}/virtu-care-2.jpg`
         },
         {
             title: 'Dostupno.UA/<br/>OpenRoad',
             slug: 'dostupno',
             tags: ['Inclusive', 'Charity', 'Web Application', 'UX Review'],
             accentColor: '#F0F9EC',
-            image: `${basePath}/project-3.jpg`
+            image: `${basePath}/dostupno-2.jpg`
         },
     ];
 
@@ -47,8 +47,8 @@ export function Works() {
                                     <Image
                                         src={project.image}
                                         alt={project.title}
-                                        width={600}
-                                        height={450}
+                                        width={630}
+                                        height={612}
                                         className={styles['project-image']}
                                         style={project.accentColor ? { backgroundColor: project.accentColor } : undefined}
                                     />

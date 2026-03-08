@@ -6,7 +6,7 @@ import { Contact } from '../components/Contact/Contact';
 
 export default function Index() {
   return (
-    <main>
+    <main className="main-page">
       <Motto />
       <Hero />
       <Works />

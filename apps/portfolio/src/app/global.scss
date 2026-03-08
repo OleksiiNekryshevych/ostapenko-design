@@ -236,8 +236,8 @@ button {
 /* ============================================
    MAIN CONTENT
    ============================================ */
-main {
-    // Push content below the sticky header on all pages
+main.main-page {
+    // Push content below the sticky header on the main page
     padding-top: var(--header-height);
 }
 
