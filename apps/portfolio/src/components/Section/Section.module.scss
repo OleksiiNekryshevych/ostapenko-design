@@ -1,6 +1,6 @@
 .section {
     padding: 60px 0;
-    scroll-margin-top: calc(48px + var(--space-lg) * 2 + 1px);
+    scroll-margin-top: var(--header-height);
 
     &:last-child {
         margin-bottom: 0;
@@ -18,7 +18,7 @@
     overflow: hidden;
     // margin-bottom: 60px;
     padding: 60px 0;
-    scroll-margin-top: calc(48px + var(--space-lg) * 2 + 1px);
+    scroll-margin-top: var(--header-height);
 
     // Grain texture overlay using SVG feTurbulence
     &::after {
@@ -64,6 +64,6 @@
     }
 
     @media (max-width: 768px) {
-        margin-bottom: 36px;
+        // margin-bottom: 36px;
     }
 }

@@ -40,6 +40,13 @@
     --container-max: 1200px;
     --container-padding: 24px;
 
+    /* Header Height */
+    --header-height: calc(48px + var(--space-lg) * 2 + 1px);
+
+    @media (max-width: 768px) {
+        --header-height: calc(48px + var(--space-md) * 2 + 1px);
+    }
+
     /* Typography Scale */
     --text-xs: 12px;
     --text-sm: 14px;
@@ -231,7 +238,7 @@ button {
    ============================================ */
 main {
     // Push content below the sticky header on all pages
-    padding-top: calc(48px + var(--space-lg) * 2 + 1px);
+    padding-top: var(--header-height);
 }
 
 /* ============================================
@@ -240,7 +247,7 @@ main {
 .section {
     padding: 60px 0;
     // Account for sticky header when scrolling to anchor links
-    scroll-margin-top: calc(48px + var(--space-lg) * 2 + 1px);
+    scroll-margin-top: var(--header-height);
 }
 
 .section--hero {

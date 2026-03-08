@@ -1,7 +1,7 @@
 .motto-wrapper {
     // Undo the main padding-top AND pull up behind the sticky header
     // = -2 × header height (one to cancel padding, one to overlap)
-    margin-top: calc(-2 * (48px + var(--space-lg) * 2 + 1px));
+    margin-top: calc(-2 * var(--header-height));
 }
 
 .motto {
@@ -32,7 +32,6 @@
 
 @media (max-width: 768px) {
     .motto {
-        min-height: 80vh;
         padding: var(--space-3xl) 0;
     }
 

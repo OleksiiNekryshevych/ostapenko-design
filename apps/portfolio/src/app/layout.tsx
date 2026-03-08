@@ -1,6 +1,7 @@
 import './global.scss';
 import { Header } from '../components/Header/Header';
 import { Footer } from '../components/Footer/Footer';
+import { RouteChangeScroll } from '../components/RouteChangeScroll/RouteChangeScroll';
 
 export const metadata = {
   title: 'Alina Ostapenko',
@@ -19,6 +20,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet" />
       </head>
       <body>
+        <RouteChangeScroll />
         <Header />
         {children}
         <Footer />

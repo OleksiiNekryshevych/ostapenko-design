@@ -230,7 +230,16 @@ export function Header() {
         <div className="container">
             <div className={styles['header-inner']}>
                 <div className={styles.brand}>
-                    <Link href="/" className={styles.logo}>
+                    <Link
+                        href="/"
+                        className={styles.logo}
+                        onClick={(e) => {
+                            if (window.location.pathname === '/') {
+                                e.preventDefault();
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                            }
+                        }}
+                    >
                         <Image
                             src={`${basePath}/logo.png`}
                             alt="AO Logo"
@@ -258,6 +267,17 @@ export function Header() {
                 ref={el => { refs.current[index] = el; }}
                 href={isHomePage ? link.href : `/${link.href}`}
                 className={styles['floating-nav-link']}
+                onClick={(e) => {
+                    // Only intercept if we are already on the homepage where the sections exist
+                    if (isHomePage) {
+                        e.preventDefault();
+                        const targetId = link.href.replace('/#', '').replace('#', '');
+                        const element = document.getElementById(targetId);
+                        if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                }}
             >
                 {link.label}
             </a>

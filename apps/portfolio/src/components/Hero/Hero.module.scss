@@ -168,14 +168,17 @@
 
     .hero-intro {
         gap: 4px;
+        text-align: center;
     }
 
     .hero-title {
-        font-size: 32px;
+        // font-size: 32px;
+        margin-bottom: 0px;
     }
 
     .hero-name {
-        font-size: 16px;
+        // font-size: 24px;
+        margin-bottom: 32px;
     }
 
     .profile-image {
@@ -192,7 +195,7 @@
     }
 
     .stat-label {
-        font-size: 12px;
+        font-size: 16px;
     }
 
     .about-row {
@@ -201,10 +204,11 @@
     }
 
     .about-text p {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .about-cards {
         width: 100%;
+        gap: 8px;
     }
 }
