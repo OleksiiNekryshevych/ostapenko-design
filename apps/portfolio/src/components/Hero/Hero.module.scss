@@ -1,7 +1,7 @@
 /* ─── Hero Section (merged Hero + Stats + About) ─── */
 
 .hero-section {
-    padding-top: var(--space-xl);
+    // padding-top: var(--space-xl);
 }
 
 /* ── Top: Image + Title ── */
@@ -32,7 +32,7 @@
 }
 
 .hero-title {
-    font-family: "Satoshi", var(--font-sans);
+    font-family: "Teachers", var(--font-sans);
     font-size: 44px;
     font-weight: 500;
     line-height: 100%;
@@ -124,7 +124,7 @@
 }
 
 .card-number {
-    font-family: "Satoshi", var(--font-sans);
+    font-family: "Teachers", var(--font-sans);
     font-size: 18px;
     font-weight: 700;
     color: var(--text);
@@ -158,7 +158,7 @@
 
 @media (max-width: 768px) {
     .hero-section {
-        padding-top: 12px;
+        // padding-top: 12px;
     }
 
     .hero-top {

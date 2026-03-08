@@ -24,6 +24,13 @@ export function Header() {
     const lightLinksRef = useRef<(HTMLAnchorElement | null)[]>([]);
     const darkLinksRef = useRef<(HTMLAnchorElement | null)[]>([]);
     const darkNavOverlayRef = useRef<HTMLDivElement>(null);
+    const chevronRef = useRef<HTMLButtonElement>(null);
+
+    const animStartTimeRef = useRef<number | null>(null);
+    const animProgressRef = useRef(0);
+    const animFromRef = useRef(0); // progress value when animation started
+    const animTargetRef = useRef(0); // 0 or 1
+    const ANIM_DURATION = 1000;
 
     const [linksInHeader, setLinksInHeader] = useState(!isHomePage);
 
@@ -56,7 +63,6 @@ export function Header() {
             }
         });
 
-        // Header clip-path (relative to header element)
         let headerClipPath: string;
         if (darkRegionBottom <= darkRegionTop) {
             headerClipPath = 'inset(0 0 100% 0)';
@@ -67,8 +73,6 @@ export function Header() {
         }
         darkOverlay.style.clipPath = headerClipPath;
 
-        // Dark nav overlay: clip to reveal only where dark sections exist on screen
-        // Uses viewport-absolute coordinates since the overlay covers the full viewport
         if (darkNavOverlayRef.current) {
             const vh = window.innerHeight;
             const darkRanges: string[] = [];
@@ -78,7 +82,6 @@ export function Header() {
                 if (r.bottom > 0 && r.top < vh) {
                     const top = Math.max(0, r.top);
                     const bottom = Math.min(vh, r.bottom);
-                    // Add a rectangle covering this dark section's visible area
                     darkRanges.push(
                         `0% ${(top / vh) * 100}%, 100% ${(top / vh) * 100}%, 100% ${(bottom / vh) * 100}%, 0% ${(bottom / vh) * 100}%`
                     );
@@ -88,12 +91,10 @@ export function Header() {
             if (darkRanges.length === 0) {
                 darkNavOverlayRef.current.style.clipPath = 'inset(0 0 100% 0)';
             } else {
-                // Build a polygon for each visible dark section
                 darkNavOverlayRef.current.style.clipPath = `polygon(${darkRanges.join(', ')})`;
             }
         }
 
-        // ─── Nav link positioning ───
         const headerCenterY = headerTop + headerHeight / 2;
         const containerEl = header.querySelector('.container');
         const containerWidth = containerEl?.getBoundingClientRect().width || window.innerWidth;
@@ -106,7 +107,6 @@ export function Header() {
         const headerStartX = containerLeft + (containerWidth - headerNavWidth) / 2;
 
         if (!isHomePage) {
-            // Non-homepage: position links directly in the header
             const positionLinks = (refs: (HTMLAnchorElement | null)[]) => {
                 refs.forEach((link, index) => {
                     if (!link) return;
@@ -121,7 +121,6 @@ export function Header() {
             return;
         }
 
-        // ─── Homepage: animate links from Motto ───
         const mottoSection = document.querySelector('[data-section-theme="dark"]');
         if (!mottoSection) return;
 
@@ -129,29 +128,44 @@ export function Header() {
         const mottoBottomY = mottoRect.bottom - 60;
         const mottoHeight = mottoRect.height;
 
-        // Progress: 0 = links at motto bottom, 1 = links in header
-        // Start transition when ~65% of the motto has been scrolled
-        // mottoRect.top starts at 0 (or headerBottom with negative margin) and goes negative
-        // When mottoRect.top is at -(mottoHeight * 0.35), 65% has scrolled past
         const scrolledIntoMotto = headerBottom - mottoRect.top;
-        const transitionStartAt = mottoHeight * 0.65;
-        const transitionEndAt = mottoHeight; // when motto bottom hits header
+        const threshold = mottoHeight * 0.65;
+        const shouldBeInHeader = scrolledIntoMotto >= threshold;
+        const newTarget = shouldBeInHeader ? 1 : 0;
 
-        let progress = 0;
-        if (scrolledIntoMotto >= transitionEndAt) {
-            progress = 1;
-        } else if (scrolledIntoMotto <= transitionStartAt) {
-            progress = 0;
-        } else {
-            progress = (scrolledIntoMotto - transitionStartAt) / (transitionEndAt - transitionStartAt);
+        // Trigger animation when target changes
+        if (newTarget !== animTargetRef.current) {
+            animFromRef.current = animProgressRef.current;
+            animTargetRef.current = newTarget;
+            animStartTimeRef.current = performance.now();
         }
 
+        // Calculate time-based progress
+        if (animStartTimeRef.current !== null) {
+            const elapsed = performance.now() - animStartTimeRef.current;
+            const t = Math.min(elapsed / ANIM_DURATION, 1);
+            // easeInOutQuad — smooth start and end
+            const eased = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+            animProgressRef.current = animFromRef.current + (animTargetRef.current - animFromRef.current) * eased;
+
+            if (t >= 1) {
+                animStartTimeRef.current = null;
+            }
+        }
+
+        const progress = animProgressRef.current;
         setLinksInHeader(progress >= 1);
 
-        const mottoSpread = containerWidth * 0.8;
-        const mottoStartX = containerLeft + (containerWidth - mottoSpread) / 2;
+        // Motto positions (left/right groups) — with padding from edges
+        const innerLinkGap = 35;
+        const mottoPadding = 20; // prevent touching screen edges
+        const mottoLinkPositions = [
+            containerLeft + mottoPadding,
+            containerLeft + mottoPadding + avgLinkWidth + innerLinkGap,
+            containerLeft + containerWidth - mottoPadding - 2 * avgLinkWidth - innerLinkGap,
+            containerLeft + containerWidth - mottoPadding - avgLinkWidth,
+        ];
 
-        // Position both light and dark link sets identically
         const positionLink = (link: HTMLAnchorElement | null, index: number) => {
             if (!link) return;
 
@@ -160,7 +174,7 @@ export function Header() {
             const easedLinkProgress = easeOutCubic(linkProgress);
 
             const currentY = mottoBottomY + (headerCenterY - mottoBottomY) * easedLinkProgress;
-            const mottoLinkX = mottoStartX + (index / (totalLinks - 1)) * mottoSpread;
+            const mottoLinkX = mottoLinkPositions[index];
             const headerLinkX = headerStartX + index * (avgLinkWidth + linkGap);
             const currentX = mottoLinkX + (headerLinkX - mottoLinkX) * easedLinkProgress;
 
@@ -172,6 +186,21 @@ export function Header() {
 
         lightLinksRef.current.forEach((link, i) => positionLink(link, i));
         darkLinksRef.current.forEach((link, i) => positionLink(link, i));
+
+        // Chevron
+        if (chevronRef.current) {
+            chevronRef.current.style.position = 'fixed';
+            chevronRef.current.style.top = `${mottoBottomY}px`;
+            chevronRef.current.style.left = `${containerLeft + containerWidth / 2}px`;
+            chevronRef.current.style.transform = 'translate(-50%, -50%)';
+            chevronRef.current.style.opacity = `${1 - progress}`;
+            chevronRef.current.style.pointerEvents = progress >= 1 ? 'none' : 'auto';
+        }
+
+        // Keep animating if animation is still running
+        if (animStartTimeRef.current !== null) {
+            requestAnimationFrame(updateHeader);
+        }
     }, [isHomePage]);
 
     useEffect(() => {
@@ -227,7 +256,7 @@ export function Header() {
             <a
                 key={link.label}
                 ref={el => { refs.current[index] = el; }}
-                href={link.href}
+                href={isHomePage ? link.href : `/${link.href}`}
                 className={styles['floating-nav-link']}
             >
                 {link.label}
@@ -256,6 +285,22 @@ export function Header() {
                     {navLinks(darkLinksRef)}
                 </div>
             </div>
+
+            {/* Chevron scroll button — only on homepage */}
+            {isHomePage && (
+                <button
+                    ref={chevronRef}
+                    className={styles['scroll-chevron']}
+                    onClick={() => {
+                        window.scrollTo(0, window.innerHeight);
+                    }}
+                    aria-label="Scroll down"
+                >
+                    <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                </button>
+            )}
         </>
     );
 }
@@ -263,3 +308,5 @@ export function Header() {
 function easeOutCubic(t: number): number {
     return 1 - Math.pow(1 - t, 3);
 }
+
+

@@ -35,6 +35,24 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     clip-path: inset(0 0 100% 0);
     z-index: 1;
+    overflow: hidden;
+
+    // Grain texture overlay matching dark sections
+    &::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.6;
+        mix-blend-mode: overlay;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        background-repeat: repeat;
+        background-size: 256px 256px;
+    }
 }
 
 /* ─── Header inner layout ─── */
@@ -115,9 +133,9 @@
 }
 
 .floating-nav-link {
-    font-family: var(--font-sans);
-    font-size: var(--text-sm);
-    font-weight: 400;
+    font-family: "Teachers", var(--font-sans);
+    font-size: 18px;
+    font-weight: 500;
     text-decoration: none;
     pointer-events: auto;
     transition: opacity var(--transition-base);
@@ -125,6 +143,26 @@
 
     &:hover {
         opacity: 0.7;
+    }
+}
+
+/* ─── Scroll chevron button ─── */
+
+.scroll-chevron {
+    position: fixed;
+    z-index: 101;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-light);
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+        opacity: 0.6;
     }
 }
 
@@ -137,13 +175,8 @@
         padding: var(--space-md) 0;
     }
 
-    .floating-nav-link {
-        font-size: var(--text-xs);
-    }
-}
-
-@media (max-width: 480px) {
-    .floating-nav {
+    .floating-nav,
+    .scroll-chevron {
         display: none;
     }
 }

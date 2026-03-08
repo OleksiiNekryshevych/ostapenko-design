@@ -5,8 +5,8 @@
 /* CSS Variables */
 :root {
     /* Typography */
-    --font-sans: "Satoshi", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    --font-heading: "Satoshi", var(--font-sans);
+    --font-sans: "Teachers", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-heading: "Teachers", var(--font-sans);
 
     /* Colors */
     --bg: #0f1724;
@@ -166,7 +166,7 @@ button {
 
 /* Section Title - Main section headings */
 .section-title {
-    font-family: "Satoshi", var(--font-sans);
+    font-family: "Teachers", var(--font-sans);
     font-size: 44px;
     font-weight: 500;
     line-height: 100%;
@@ -230,16 +230,17 @@ button {
    MAIN CONTENT
    ============================================ */
 main {
-    // Pull content up behind sticky header so header starts over the dark Motto section
-    margin-top: calc(-1 * (48px + var(--space-lg) * 2 + 1px));
+    // Push content below the sticky header on all pages
+    padding-top: calc(48px + var(--space-lg) * 2 + 1px);
 }
 
 /* ============================================
    SECTION SPACING
    ============================================ */
 .section {
-    padding-top: var(--space-3xl);
-    padding-bottom: var(--space-3xl);
+    padding: 60px 0;
+    // Account for sticky header when scrolling to anchor links
+    scroll-margin-top: calc(48px + var(--space-lg) * 2 + 1px);
 }
 
 .section--hero {
