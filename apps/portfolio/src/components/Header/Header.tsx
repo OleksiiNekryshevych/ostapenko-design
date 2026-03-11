@@ -314,7 +314,15 @@ export function Header() {
                     ref={chevronRef}
                     className={styles['scroll-chevron']}
                     onClick={() => {
-                        window.scrollTo(0, window.innerHeight);
+                        const aboutSection = document.getElementById('about');
+                        const header = headerRef.current;
+                        if (aboutSection && header) {
+                            const headerHeight = header.getBoundingClientRect().height;
+                            const aboutTop = aboutSection.getBoundingClientRect().top + window.scrollY;
+                            window.scrollTo({ top: aboutTop - headerHeight, behavior: 'smooth' });
+                        } else {
+                            window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+                        }
                     }}
                     aria-label="Scroll down"
                 >
