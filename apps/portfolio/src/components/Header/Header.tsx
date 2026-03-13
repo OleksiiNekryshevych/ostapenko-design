@@ -220,8 +220,9 @@ export function Header() {
 
         const socialNavs = header.querySelectorAll(`.${styles['social-nav']}`) as NodeListOf<HTMLElement>;
         socialNavs.forEach(nav => {
-            nav.style.opacity = String(1 - progress);
-            nav.style.pointerEvents = progress > 0.5 ? 'none' : 'auto';
+            // Fade out completely by halfway through the animation (progress 0.5) to prevent overlap
+            nav.style.opacity = String(Math.max(0, 1 - progress * 2));
+            nav.style.pointerEvents = progress > 0.1 ? 'none' : 'auto';
         });
 
         // Chevron
