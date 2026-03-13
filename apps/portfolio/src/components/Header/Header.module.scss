@@ -11,7 +11,9 @@
 
 .header-light,
 .header-dark {
-    padding: var(--space-lg) 0;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
 }
 
 /* ─── Light (base) layer ─── */

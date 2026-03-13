@@ -40,8 +40,8 @@
     --container-max: 1440px;
     --container-padding: 24px;
 
-    /* Header Height */
-    --header-height: calc(48px + var(--space-lg) * 2 + 1px);
+    // Header (fixed explicitly to match design)
+    --header-height: 88px;
 
     @media (max-width: 768px) {
         --header-height: calc(48px + var(--space-md) * 2 + 1px);
