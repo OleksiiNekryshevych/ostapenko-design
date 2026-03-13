@@ -11,7 +11,7 @@ const NAV_LINKS = [
     { label: 'About', href: '#about' },
     { label: 'Projects', href: '#works' },
     { label: 'Reviews', href: '#reviews' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Let\'s Connect', href: '#contact' },
 ];
 
 export function Header() {
@@ -101,11 +101,21 @@ export function Header() {
         const containerWidth = containerEl?.getBoundingClientRect().width || window.innerWidth;
         const containerLeft = containerEl?.getBoundingClientRect().left || 0;
 
-        const totalLinks = NAV_LINKS.length;
         const linkGap = 32;
-        const avgLinkWidth = 70;
-        const headerNavWidth = totalLinks * avgLinkWidth + (totalLinks - 1) * linkGap;
-        const headerStartX = containerLeft + (containerWidth - headerNavWidth) / 2;
+        const linkWidths = [55, 75, 75, 110]; // Approximate unpadded widths (18px font scaled for contact)
+        const centerLinksWidth = linkWidths[0] + linkWidths[1] + linkWidths[2] + 2 * linkGap;
+        const centerStartX = containerLeft + (containerWidth - centerLinksWidth) / 2;
+
+        const headerLinkPositions = [
+            centerStartX,
+            centerStartX + linkWidths[0] + linkGap,
+            centerStartX + linkWidths[0] + linkGap + linkWidths[1] + linkGap,
+            0 // Placeholder for contact button
+        ];
+
+        const cp = window.innerWidth <= 768 ? 20 : (window.innerWidth <= 1024 ? 32 : 24);
+        const contactBtnPaddedWidth = linkWidths[3] + 64; // Base text + 32px left/right padding (.size-md)
+        headerLinkPositions[3] = containerLeft + containerWidth - cp - contactBtnPaddedWidth;
 
         if (!isHomePage) {
             const positionLinks = (refs: (HTMLAnchorElement | null)[]) => {
@@ -113,12 +123,23 @@ export function Header() {
                     if (!link) return;
                     link.style.position = 'fixed';
                     link.style.top = `${headerCenterY}px`;
-                    link.style.left = `${headerStartX + index * (avgLinkWidth + linkGap)}px`;
+                    link.style.left = `${headerLinkPositions[index]}px`;
                     link.style.transform = 'translateY(-50%)';
+
+                    if (index === 3) {
+                        link.style.setProperty('--btn-progress', '1');
+                        link.classList.add(styles['contact-btn']);
+                    }
                 });
             };
             positionLinks(lightLinksRef.current);
             positionLinks(darkLinksRef.current);
+
+            const socialNavs = header.querySelectorAll(`.${styles['social-nav']}`) as NodeListOf<HTMLElement>;
+            socialNavs.forEach(nav => {
+                nav.style.opacity = '0';
+                nav.style.pointerEvents = 'none';
+            });
             return;
         }
 
@@ -159,12 +180,12 @@ export function Header() {
 
         // Motto positions (left/right groups) — with padding from edges
         const innerLinkGap = 35;
-        const mottoPadding = 20; // prevent touching screen edges
+        const mottoPadding = 24; // prevent touching screen edges
         const mottoLinkPositions = [
             containerLeft + mottoPadding,
-            containerLeft + mottoPadding + avgLinkWidth + innerLinkGap,
-            containerLeft + containerWidth - mottoPadding - 2 * avgLinkWidth - innerLinkGap,
-            containerLeft + containerWidth - mottoPadding - avgLinkWidth,
+            containerLeft + mottoPadding + linkWidths[0] + innerLinkGap,
+            containerLeft + containerWidth - mottoPadding - linkWidths[3] - innerLinkGap - linkWidths[2],
+            containerLeft + containerWidth - mottoPadding - linkWidths[3],
         ];
 
         const positionLink = (link: HTMLAnchorElement | null, index: number) => {
@@ -176,17 +197,33 @@ export function Header() {
 
             const currentY = mottoBottomY + (headerCenterY - mottoBottomY) * easedLinkProgress;
             const mottoLinkX = mottoLinkPositions[index];
-            const headerLinkX = headerStartX + index * (avgLinkWidth + linkGap);
+            const headerLinkX = headerLinkPositions[index];
             const currentX = mottoLinkX + (headerLinkX - mottoLinkX) * easedLinkProgress;
 
             link.style.position = 'fixed';
             link.style.top = `${currentY}px`;
             link.style.left = `${currentX}px`;
             link.style.transform = 'translateY(-50%)';
+
+            if (index === 3) {
+                link.style.setProperty('--btn-progress', String(easedLinkProgress));
+                if (easedLinkProgress > 0) {
+                    link.classList.add(styles['contact-btn']);
+                } else {
+                    link.classList.remove(styles['contact-btn']);
+                }
+            }
         };
 
         lightLinksRef.current.forEach((link, i) => positionLink(link, i));
         darkLinksRef.current.forEach((link, i) => positionLink(link, i));
+
+        const socialNavs = header.querySelectorAll(`.${styles['social-nav']}`) as NodeListOf<HTMLElement>;
+        socialNavs.forEach(nav => {
+            // Fade out completely by halfway through the animation (progress 0.5) to prevent overlap
+            nav.style.opacity = String(Math.max(0, 1 - progress * 2));
+            nav.style.pointerEvents = progress > 0.1 ? 'none' : 'auto';
+        });
 
         // Chevron
         if (chevronRef.current) {
