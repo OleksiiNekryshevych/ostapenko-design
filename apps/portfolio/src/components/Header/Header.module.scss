@@ -144,6 +144,26 @@
     &:hover {
         opacity: 0.7;
     }
+
+    &.contact-btn {
+        height: calc(54px * var(--btn-progress, 0));
+        padding: 0 calc(32px * var(--btn-progress, 0));
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden; // Prevent text spilling if height goes to 0 during morph
+    }
+}
+
+.floating-nav-light .contact-btn {
+    background-color: rgba(15, 23, 36, var(--btn-progress, 0));
+    color: color-mix(in srgb, #fff calc(var(--btn-progress, 0) * 100%), var(--text));
+}
+
+.floating-nav-dark .contact-btn {
+    background-color: rgba(255, 255, 255, var(--btn-progress, 0)); 
+    color: color-mix(in srgb, var(--text) calc(var(--btn-progress, 0) * 100%), var(--text-light));
 }
 
 /* ─── Scroll chevron button ─── */

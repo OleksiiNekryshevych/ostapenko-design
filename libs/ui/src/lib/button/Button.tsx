@@ -5,6 +5,7 @@ import clsx from 'clsx';
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode;
     variant?: 'primary' | 'ghost' | 'outline';
+    size?: 'md' | 'lg';
     href?: string;
     className?: string; // Allow custom classes
     download?: boolean | string; // Add download prop
@@ -13,11 +14,12 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 export function Button({
     children,
     variant = 'primary',
+    size = 'lg',
     href,
     className,
     ...props
 }: ButtonProps) {
-    const btnClass = clsx(styles.btn, styles[variant], className);
+    const btnClass = clsx(styles.btn, styles[variant], styles[`size-${size}`], className);
 
     if (href) {
         return (

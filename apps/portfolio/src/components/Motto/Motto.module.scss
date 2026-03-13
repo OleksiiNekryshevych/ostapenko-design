@@ -16,17 +16,17 @@
 
 .motto-text {
     font-family: "Teachers", var(--font-sans);
-    font-size: 72px;
+    font-size: 90px;
     font-weight: 300;
     line-height: 1.1;
     letter-spacing: -0.02em;
     color: var(--text-light);
-    max-width: 900px;
+    max-width: 912px;
 }
 
 @media (max-width: 1024px) {
     .motto-text {
-        font-size: 52px;
+        font-size: 76px;
     }
 }
 
