@@ -16,18 +16,18 @@ export function Works() {
             image: `${basePath}/bloom-2.jpg`
         },
         {
-            title: 'VirtuCare',
-            slug: 'virtucare',
-            tags: ['B2B', 'Telehealth', 'Healthcare', 'Web Application'],
-            accentColor: undefined, // No accent color needed - image fills entire space
-            image: `${basePath}/virtu-care-2.jpg`
-        },
-        {
             title: 'Dostupno.UA/<br/>OpenRoad',
             slug: 'dostupno',
             tags: ['Inclusive', 'Charity', 'Web Application', 'UX Review'],
             accentColor: '#F0F9EC',
             image: `${basePath}/dostupno-2.jpg`
+        },
+        {
+            title: 'VirtuCare',
+            slug: 'virtucare',
+            tags: ['B2B', 'Telehealth', 'Healthcare', 'Web Application'],
+            accentColor: undefined, // No accent color needed - image fills entire space
+            image: `${basePath}/virtu-care-2.jpg`
         },
     ];
 
