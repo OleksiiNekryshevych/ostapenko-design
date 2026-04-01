@@ -350,21 +350,21 @@ export default function BloomPage() {
 
                     <div className={styles['screens-images-container']}>
                         <Image
-                            src={`${basePath}/bloom/flows-1.jpg`}
+                            src={`${basePath}/bloom/flows-1.png`}
                             alt="Mood Tracking Screen"
                             width={805}
                             height={500}
                             className={styles['screen-preview']}
                         />
                         <Image
-                            src={`${basePath}/bloom/flows-2.jpg`}
+                            src={`${basePath}/bloom/flows-2.png`}
                             alt="Mood Tracking Screen"
                             width={805}
                             height={500}
                             className={styles['screen-preview']}
                         />
                         <Image
-                            src={`${basePath}/bloom/flows-3.jpg`}
+                            src={`${basePath}/bloom/flows-3.png`}
                             alt="Flow 3"
                             width={805}
                             height={500}
@@ -394,7 +394,7 @@ export default function BloomPage() {
                         </div>
                         <div className={styles['screen-image']}>
                             <Image
-                                src={`${basePath}/bloom/muud.jpg`}
+                                src={`${basePath}/bloom/home.png`}
                                 alt="Mood Tracking Screen"
                                 width={245}
                                 height={530}
@@ -431,7 +431,7 @@ export default function BloomPage() {
                         </div>
                         <div className={styles['screen-image']}>
                             <Image
-                                src={`${basePath}/bloom/journal-history.jpg`}
+                                src={`${basePath}/bloom/journal.png`}
                                 alt="Journal History"
                                 width={245}
                                 height={530}
@@ -462,7 +462,7 @@ export default function BloomPage() {
                         </div>
                         <div className={styles['screen-image']}>
                             <Image
-                                src={`${basePath}/bloom/insights.jpg`}
+                                src={`${basePath}/bloom/insights.png`}
                                 alt="Insights"
                                 width={245}
                                 height={530}
@@ -481,7 +481,7 @@ export default function BloomPage() {
                         </div>
                         <div className={styles['screen-image']}>
                             <Image
-                                src={`${basePath}/bloom/profile.jpg`}
+                                src={`${basePath}/bloom/profile.png`}
                                 alt="Profile"
                                 width={245}
                                 height={530}
@@ -518,7 +518,7 @@ export default function BloomPage() {
 
                         <div className={styles['screens-mood-tracking-image']}>
                             <Image
-                                src={`${basePath}/bloom/mood-tracking-flow.jpg`}
+                                src={`${basePath}/bloom/flow-4x.png`}
                                 alt="Mood Tracking Flow"
                                 width={1168}
                                 height={554}
