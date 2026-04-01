@@ -350,21 +350,21 @@ export default function BloomPage() {
 
                     <div className={styles['screens-images-container']}>
                         <Image
-                            src={`${basePath}/bloom/flows-1.png`}
+                            src={`${basePath}/bloom/flow-1.png`}
                             alt="Mood Tracking Screen"
                             width={805}
                             height={500}
                             className={styles['screen-preview']}
                         />
                         <Image
-                            src={`${basePath}/bloom/flows-2.png`}
+                            src={`${basePath}/bloom/flow-2.png`}
                             alt="Mood Tracking Screen"
                             width={805}
                             height={500}
                             className={styles['screen-preview']}
                         />
                         <Image
-                            src={`${basePath}/bloom/flows-3.png`}
+                            src={`${basePath}/bloom/flow-3.png`}
                             alt="Flow 3"
                             width={805}
                             height={500}
